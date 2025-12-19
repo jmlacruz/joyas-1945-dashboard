@@ -1,0 +1,61 @@
+.reportList_headers {
+    text-align: center !important;
+}
+
+.reportList_section tr td:nth-child(8) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section tr td:nth-child(10) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section tr td:nth-child(12) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section tr td:nth-child(14) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead tr:first-child th:nth-child(8) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead tr:first-child th:nth-child(9) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead tr:first-child th:nth-child(10) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead tr:first-child th:nth-child(11) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead tr:nth-child(2) th:nth-child(8) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead tr:nth-child(2) th:nth-child(10) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead tr:nth-child(2) th:nth-child(12) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead tr:nth-child(2) th:nth-child(14) {
+    border-left: var(--tables-internal-border);
+}
+
+.reportList_section thead:last-child tr:last-child{
+    display: none;
+}   
+
+.reportList_section thead:nth-child(3) * {
+    border: none !important;
+}
+
+

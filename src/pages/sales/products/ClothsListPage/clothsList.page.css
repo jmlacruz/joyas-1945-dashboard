@@ -1,0 +1,11 @@
+.clothsListTable [data-component-name="Table/Th"]:last-child  {
+    width: 2rem;
+}
+
+.clothsListTable [data-component-name="Table/Th"]:nth-child(3) {
+    width: 2rem;
+}
+
+.clothsListTable [data-component-name="Table/Th"]:first-child {
+    width: 4rem;
+}

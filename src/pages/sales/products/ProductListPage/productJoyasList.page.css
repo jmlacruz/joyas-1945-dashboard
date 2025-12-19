@@ -1,0 +1,92 @@
+.productsList_header_cont {
+    flex-wrap: wrap-reverse !important;
+}
+
+.productsListStockBadge {
+    width: max-content !important;
+    min-width: max-content !important;
+}
+
+.productsListStockBadge0stock {
+    padding: 0 1rem;
+}
+
+.productsListSearchCont {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.productsListSearchInput {
+    min-width: 16rem;
+}
+
+.productsListInputOrSelect {
+    width: 17rem !important;
+    min-width: 17rem;
+}
+
+.productsListInputOrSelect_largeText {
+    width: unset !important;
+}
+
+.productsList_filter_mainCont {
+    max-height: 0px;
+    overflow: hidden;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    transition-property: max-height;
+}
+
+.productsList_filter_cont {
+    align-items: flex-end;
+    justify-content: flex-start;
+    background-color: var(--bg-white);
+}
+
+.productsList_filter_cont > div {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.productsList_filter_input_range {
+    width: 50%;
+    margin-right: 2rem;
+}
+
+.productsList_filter_buttons_cont {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.productsList_filter_search_button {
+    margin-right: 2rem;
+    min-width: 12rem;
+}
+
+div.productsListInputOrSelect_checkBox_cont {
+    align-self: flex-end;
+}
+
+.productsListInputOrSelect_checkBox input {
+    border: 2px solid lightgray;
+}
+
+@media only screen and (orientation: portrait) {
+
+    .productsListInputOrSelect {
+        width: 100% !important;
+        min-width: 100%;
+    }
+
+    .productsList_filter_cont > div {
+        width: 100%;
+    }
+
+    div.productsListInputOrSelect_checkBox_cont {
+        width: fit-content;
+    }
+
+    .productsList_filter_buttons_cont {
+        justify-content: flex-start;
+    }
+}

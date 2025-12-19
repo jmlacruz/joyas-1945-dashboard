@@ -1,0 +1,27 @@
+.ordersListPageContainer {
+	--iconsTableContWidth: 4rem;
+}
+
+.ordersListPageContainer thead tr th:nth-child(6) {
+	width: var(--iconsTableContWidth);
+	min-width: var(--iconsTableContWidth);
+}
+
+.ordersListPageContainer thead tr th:nth-child(7) {
+	width: var(--iconsTableContWidth);
+	min-width: var(--iconsTableContWidth);
+}
+
+.ordersListPageContainer thead tr th:nth-child(8) {
+	width: var(--iconsTableContWidth);
+	min-width: var(--iconsTableContWidth);
+}
+
+.ordersListPageContainer thead tr th:nth-child(9) {
+	width: var(--iconsTableContWidth);
+	min-width: var(--iconsTableContWidth);
+}
+
+.printedqty {
+	color: rgb(221, 144, 0) !important;
+}

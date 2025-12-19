@@ -1,0 +1,4 @@
+.customAvatar_hue {
+    filter: hue-rotate(180deg) saturate(150%) opacity(75%);
+    min-width: 2rem !important;
+}

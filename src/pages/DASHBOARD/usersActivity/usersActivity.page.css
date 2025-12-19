@@ -1,0 +1,12 @@
+.usersActivity_section table tr td:nth-child(5){
+    max-width: 12rem !important;
+}
+
+.usersActivity_section table tr td:nth-child(6){
+    max-width: 8rem !important;
+    border-right: var(--tables-internal-border);
+}
+
+.usersActivity_section table tr th:nth-child(6){
+    border-right: var(--tables-internal-border);
+}

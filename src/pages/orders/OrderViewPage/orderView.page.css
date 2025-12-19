@@ -1,0 +1,19 @@
+.orderViewPageCont input {
+	height: 3rem;
+}
+
+.orderViewPageCont th {
+	height: 3rem;
+}
+
+.orderViewPagePdfView {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div>label {
+	margin-bottom: 0 !important;
+}

@@ -1,0 +1,42 @@
+.ordersInputsInfo {
+    background-color: white !important;
+    border-color: var(--color-bg-inputs) !important;
+}
+
+.ordersInputsInfo:hover {
+    border-color: var(--color-bg-inputs) !important;
+}
+
+.ordersInputsInfo:focus {
+    background-color: white !important;
+    border-color: var(--color-bg-inputs) !important;
+}
+
+/*************************** Tabla Productos **************************************/
+
+.orderPage_productsTable {
+    --borders-color: rgb(230, 230, 230);
+    width: 100%;
+    border: 1px solid var(--borders-color);
+    border-collapse: collapse;
+}
+
+.orderPage_productsTable th,
+.orderPage_productsTable td {
+    text-align: center;
+    border: 1px solid var(--borders-color);
+    border-collapse: collapse;
+}
+
+.orderPage_productsTable th {
+    background-color: var(--color-bg-inputs);
+}
+
+th.orderPage_productsTable_smallColumn {
+    width: 5rem;
+    max-width: 5rem;
+}
+
+.orderPage_productsTable th {
+    padding: 0 0.5rem;
+}

@@ -1,0 +1,22 @@
+.dashBoard_loginForm_cardCont {
+    width: 35rem;
+    max-width: 100%;
+}
+
+.dashBoard_loginFormCont {
+    padding: 1rem;
+    width: 100%;
+}
+
+.dashBoard_loginFormCont > div {
+    width: 100%;
+}
+
+.loginForm_checkBoxCont input#optionA {
+    margin-right: 1rem !important;    
+}
+
+.text-color-dark {
+    color: var(--text-dark-color);
+}
+

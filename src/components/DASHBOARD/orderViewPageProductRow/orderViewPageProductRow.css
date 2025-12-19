@@ -1,0 +1,9 @@
+.orderPageView_productCard_small_column {
+	width: 2rem;
+}
+
+td.orderPageView_productCard_img_cont {
+	height: 2rem !important;
+	width: 2rem !important;
+	min-width: 2rem !important;
+}

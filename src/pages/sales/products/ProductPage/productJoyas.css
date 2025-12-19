@@ -1,0 +1,25 @@
+.groupsSearchCont {
+    position: relative;
+}
+
+.groupsSearchResultsCont {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    border: 1px solid var(--bg-gray);
+    max-height: 20rem;
+    overflow-y: scroll ;
+}
+
+.groupsSearchResultsCont li {
+    min-height: 26px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.groupsSearchResultsCont li:hover {
+    background-color: var(--color-web-1);
+}

@@ -1,0 +1,9 @@
+.dashBoard_aside {
+    align-self: flex-start;
+    height: 100%;
+}
+
+.dashBoard_aside > div {
+    width: 100%;
+}
+

@@ -1,0 +1,53 @@
+.dateInput1Cont {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+}
+
+.dateInput1_inputShowed {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding-left: 0.5rem;
+    border-radius: 5px;
+    outline: 2px solid transparent;
+    transition-property: outline-color;
+    transition-timing-function: ease-out;
+    transition-duration: 0.25s;
+}
+
+.dateInput1_inputShowed:hover {
+    outline-color: var(--color-web-1);
+}
+
+.dateInput1_inputShowed:focus{
+    outline: 2px solid lightgrey;
+}
+ 
+.dateInput1_inputHidden {
+    position: 'absolute';
+    left: 0;
+    top: 0;
+    width: "100%";
+    height: '100%';
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dateInput1_mainCont {
+    position: relative;
+}
+
+.dateInput1_originalInput {
+    color: transparent !important;
+    user-select: none;
+}

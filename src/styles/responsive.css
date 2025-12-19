@@ -1,0 +1,52 @@
+.forNotebooks1366Page {
+    width: 75%;
+}
+
+@media only screen and (width < 1367px) {
+    .forNotebooks1366Page {
+        width: 100%;
+    }
+}
+
+
+@media all {
+  .page-break {
+    display: none;
+  }
+}
+
+@media print {
+  html, body {
+    height: initial !important;
+    overflow: initial !important;
+    background-color: white !important;
+  }
+}
+
+@media print {
+  .page-break {
+    margin-top: 1.17rem;
+    margin-bottom: 1.17rem;
+    display: block;
+    page-break-before: auto;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 20mm;
+}
+
+.printContent {
+  display: none;
+}
+
+@media print {
+  .printContent {
+    display: block;
+  }
+  .noPrint {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}

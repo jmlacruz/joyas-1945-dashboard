@@ -1,0 +1,41 @@
+.dashBoard_modal1Cont {
+    border-radius: 0.5rem !important;
+    padding: 1rem;
+}
+
+.dashBoard_modal1Icon {
+    margin-bottom: 0.5rem;
+}
+
+.dashBoard_modal1Icon_opDown {
+    filter: opacity(75%);
+}
+
+[data-component-name="Modal/ModalHeader"] {
+    justify-content: center !important;
+    font-size: 22px !important;
+    color: var(--text-color-gray-1);
+    font-weight: 600 !important;
+}
+
+[data-component-name="Modal/ModalHeader"] div:nth-child(1) {
+    flex-direction: column;
+}
+
+[data-component-name="Modal/ModalHeader"] div:nth-child(2) {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+}
+
+[data-component-name="Modal/ModalBody"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 5rem;
+}
+
+[data-component-name="Modal/ModalFooter"] {
+    justify-content: center !important;
+}

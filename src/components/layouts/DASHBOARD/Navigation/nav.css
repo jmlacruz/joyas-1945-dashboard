@@ -1,0 +1,11 @@
+/* [data-component-name='Nav/NavItemText'] {
+  
+}
+
+[data-component-name="Nav/NavItemContent"] {
+
+} */
+ 
+[data-component-name="Nav/NavItemText"] {
+    white-space: wrap !important;
+}

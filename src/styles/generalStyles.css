@@ -1,0 +1,107 @@
+.pageContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/********************** Tablas *******************/
+
+/*Para que el ancho de las columnas se adapte al contenido y no sean en todas igual */
+[data-component-name="Table"] {
+    table-layout: auto !important;                     
+}
+
+/*Para que no desaparezca el avatar en la vista previa de la tabla en home al ordenar usuarios */
+[data-component-name="Table/Th"] {                     
+    min-width: 5rem !important;
+    vertical-align: text-top;
+}
+
+[data-component-name="Table/Td"] {
+   min-width: 5rem !important;
+}  
+
+@media only screen and (width < 1536px) {
+
+    [data-component-name="Table/Th"] {                     
+        text-align: left !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        min-width: 3rem !important;
+    }
+
+    [data-component-name="Table/Td"] {
+        padding: unset !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        min-width: 3rem !important;
+        max-width: 17rem !important;
+        height: 1.5rem !important;
+    }
+    
+    [data-component-name="Table/Td"] * {
+        line-height: 1.5;
+    }
+
+    /**************************Scroll de celdas ********************/
+
+    [data-component-name="Table/Td"]::-webkit-scrollbar {                 /* ".cartDropDrown" es la clase del elemento que tiene el scroll */
+        height: 0.5rem !important;
+    }
+    
+    [data-component-name="Table/Td"]::-webkit-scrollbar-track {           /* Fondo del scroll */
+        background-color: rgb(233, 233, 233);
+        border-radius: 0.5rem;
+    }
+    
+    [data-component-name="Table/Td"]::-webkit-scrollbar-thumb {           /* Barra del scroll */
+        background-color: rgb(185, 185, 185);
+        border-radius: 0.25rem;
+        cursor: pointer;
+    }
+    
+    [data-component-name="Table/Td"]::-webkit-scrollbar-thumb:hover {     /* Efceto hover sobre scroll */
+        background-color: var(--color-web-1);
+    }
+    
+    [data-component-name="Table/Td"]::-webkit-scrollbar-button,           /* Flechas de scroll */
+    [data-component-name="Table/Td"]::-webkit-scrollbar-up {
+        display: none;
+    }
+}
+
+/************************************************/
+
+.trashIconRed {
+    filter: grayscale(20%) brightness(120%) opacity(75%);
+}
+
+.requiredFieldSymbol {
+    color: var(--color-web-1);
+}
+
+/**************************************************/
+
+.colorJoyas1 {
+    color: var(--color-web-1);
+}
+
+/**************************************************/
+
+.elementToShow {
+    opacity: 0;
+}
+
+/******************** Formularios *************************/
+
+.formFieldsMarginBottom div {
+    margin-bottom: 10px;
+}
+
+.formFieldsMarginBottom textarea {
+    resize: none;
+}

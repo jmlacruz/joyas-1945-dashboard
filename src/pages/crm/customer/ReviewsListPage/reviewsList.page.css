@@ -1,0 +1,7 @@
+.reviewsListTable [data-component-name="Table/Th"] {
+    max-width: 30rem;
+}
+
+.reviewsListTable [data-component-name="Table/Td"] {
+    max-width: 30rem;
+}  

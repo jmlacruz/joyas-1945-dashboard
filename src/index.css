@@ -1,0 +1,56 @@
+:root { 
+    --color-web-1: #3b82f6; 
+    --color-web-zinc: #71717a;
+    --color-web-red: #ef4444;
+    --color-web-amber: #f59e0b;
+    --color-web-lime: #84cc16;
+    --color-web-emerald: #10b981;
+    --color-web-violet: #8b5cf6;
+    --color-web-sky: #0ea5e9;
+
+    --color-bg-inputs: #F4F4F5;
+    --color-bg-header: rgb(252, 252, 252);
+
+    --bg-white: white;
+    --bg-gray: rgb(244,244,245);
+
+    --text-dark-color: #27272A;                     /*Color zinc*/
+    --text-color-gray-1: rgb(99, 99, 99);
+
+    --tables-internal-border: 1px solid rgb(211, 211, 211);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wh100 {
+    width: 100%;
+    height: 100%;
+}
+
+.dflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
