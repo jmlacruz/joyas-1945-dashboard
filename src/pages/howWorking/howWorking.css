@@ -1,0 +1,16 @@
+.howWorking_video {
+    width: 21rem;
+    aspect-ratio: 16/9;
+}
+
+.howWorking_answerImg {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+@media only screen and (orientation: portrait) {
+    .howWorking_video {
+        width: 100% !important;
+        aspect-ratio: unset;
+    }
+}

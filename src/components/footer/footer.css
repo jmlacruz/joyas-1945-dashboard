@@ -1,0 +1,149 @@
+.footerCont {
+    width: 100%;
+    height: 10rem;
+    --section-width: 50rem;
+    border-top: 1px solid var(--color-borders-light-gray);
+}
+
+.footerTopSection {
+    width: var(--section-width);
+    max-width: 90%;
+    height: 67%;
+    border-bottom: 1px solid var(--color-borders-light-gray);
+    padding: 2rem 0;
+    justify-content: flex-start;
+}
+
+.footerTopSectionLogoCont {
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 3rem;
+}
+
+.footerTopSectionJewelryCont {
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-right: 3rem;
+}
+
+.footerTopSectionJewelryCont_Title {
+    text-align: left;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: var(--font-style-bold);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.footerTopSectionJewelryCont_sections {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.footerTopSectionJewelryCont_sections p {
+    margin-right: 1.25rem;
+    cursor: pointer;
+}
+
+.footerTopSectionJewelryCont_sections p:last-child {
+    margin-right: 0;
+}
+
+.footerTopSectionSiteMapCont {
+    width: 40%;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.footerBottomSection {
+    width: var(--section-width);
+    max-width: 90%;
+    height: 33%;
+}
+
+.footerBottomSectionText {
+    font-size: var(--font-size-small);
+    color: var(--text-gray-color-2);
+}
+
+.footerBottomSectionTextImgLoading {
+    font-size: var(--font-size-small);
+    margin-left: 0.5rem;
+}
+
+/************************ responseive 2º sprint **************************/
+
+@media only screen and (orientation: portrait), (orientation: landscape) and (width < 1200px) {
+
+    .footerCont {
+        height: unset;
+        min-height: 10rem;
+    }
+
+    .footerTopSectionLogoCont {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .footerTopSection {
+        flex-direction: column;
+        max-width: 100%;
+        padding-right: var(--padding-horizontal-seccions-portrait);
+        padding-left: var(--padding-horizontal-seccions-portrait);
+    }
+
+    .footerTopSectionJewelryCont {
+        margin-right: 0;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .footerTopSectionJewelryCont_Title {
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .footerTopSectionJewelryCont_sections {
+        flex-wrap: wrap;
+    }
+
+    .footerTopSectionJewelryCont_sections p {
+        line-height: 1.75;
+    }
+
+    .footerBottomSection {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem var(--padding-horizontal-seccions-portrait);
+        flex-wrap: wrap;
+    }
+
+    .footerBottomSection p {
+        line-height: 1.5;
+    }
+}
+
+@media only screen and (orientation: landscape) and (width < 1200px) {
+
+    .footerTopSection {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footerTopSectionLogoCont {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footerTopSectionJewelryCont {
+        width: 50%;
+    }
+
+    .footerTopSection .footerTopSectionJewelryCont:nth-child(3) {
+        padding-left: 3rem;
+    }
+}

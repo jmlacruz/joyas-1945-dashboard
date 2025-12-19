@@ -1,0 +1,101 @@
+.cartDropDrown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: 14rem;
+    background-color: var(--bg-white);
+    padding: 1rem;
+    padding-bottom: 0;
+    padding-top: 0;
+    box-shadow: 16px 21px 69px -33px rgba(0, 0, 0, 0.75);
+    max-height: 50vh;
+    overflow-y: auto;
+    justify-content: flex-start;
+}
+
+.cartDropDrown_productsCont {
+    width: 100%;
+    height: 100%;
+}
+
+.cartDropDrown_productCont {
+    width: 100%;
+    min-height: 5rem;
+    border-bottom: 1px solid var(--color-borders-light-gray);
+    padding: 0.75rem 0;
+}
+
+.cartDropDrown div:last-child {
+    border-bottom: none;
+}
+
+.cartDropDrown_img {
+    height: 100%;
+    width: 33%;
+    object-fit: contain;
+}
+
+.cartDropDrown_infoCont {
+    height: 100%;
+    width: 67%;
+    align-items: flex-start;
+    padding-left: 1rem;
+}
+
+.cartDropDrown_productDescription, .cartDropDrown_productPrice {
+    text-align: left;
+}
+
+.cartDropDrown_productPrice {
+    margin-top: 0.5rem;
+}
+
+.cartDropDrown_resumeCont {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.cartDropDrown_resume_totalCont {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.cartDropDrown_resume_total {
+    font-family: var(--font-style-black);
+    margin-left: 0.25rem;
+}
+
+.cartDropDrown_resume_button {
+    margin-bottom: 0.75rem;
+}
+
+.cartDropDrown_spinnerCont {
+    width: 100%;
+    position: relative;
+    height: 6rem;
+    padding: 1rem 0;
+}
+
+/*********************** Scroll *************************/
+
+.cartDropDrown::-webkit-scrollbar {                 /* ".cartDropDrown" es la clase del elemento que tiene el scroll */
+    width: 0.35rem
+}
+
+.cartDropDrown::-webkit-scrollbar-track {           /* Fondo del scroll */
+    background-color: transparent;
+}
+
+.cartDropDrown::-webkit-scrollbar-thumb {           /* Barra del scroll */
+    background-color: var(--color-web-1);
+    border-radius: 0.175rem;
+}
+
+.cartDropDrown::-webkit-scrollbar-thumb:hover {     /* Efceto hover sobre scroll */
+    background-color: var(--hover-green-color);
+}
+
+.cartDropDrown::-webkit-scrollbar-button,           /* Flechas de scroll */
+.cartDropDrown::-webkit-scrollbar-up {
+    display: none;
+}

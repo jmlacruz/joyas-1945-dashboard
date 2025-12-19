@@ -1,0 +1,671 @@
+.landingPage_home_container {
+    background-image: url("../../../../public/images/landing/bgHome.jpg");
+    background-color: var(--bg-white);
+    background-attachment: scroll;
+    background-position-y: calc(var(--navbar-height) * -1 + 0.5 * var(--scroll-position, 0px));
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    --height-buttons: 56px;
+}
+
+.landingPage_home_seccion_cont {
+    height: calc(100vh - var(--navbar-height));
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+.landingPage_home_title {
+    font-family: var(--font-style-landing-1);
+    font-size: 110px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.landingPage_home_subTitle1 {
+    font-size: 50px;
+    font-family: var(--font-style-black);
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+}
+
+.landingPage_home_subTitle2, .landingPage_home_subTitle3{
+    font-size: var(--font-size-xxLarge);
+    font-family: var(--font-style-medium);
+    letter-spacing: 4px;
+}
+
+.landingPage_home_subTitle2 {
+    margin-bottom: 15px;
+}
+
+.landingPage_home_header_buttons_cont {
+    margin-top: 175px;
+}
+
+/********************************* Landing *****************************/
+
+.landingPage_button1 {
+    height: var(--height-buttons);
+    border-radius: calc(var(--height-buttons) / 2);
+    align-self: flex-end;
+    color: var(--text-dark-color);
+    font-size: var(--font-size-normal);
+    font-family: var(--font-style-bold);
+    margin-bottom: 3rem;
+    transition-property: background-color;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+    cursor: pointer;
+    border: none;
+    background-color: var(--bg-white);
+    width: 350px;
+    min-width: 350px;
+    max-width: 100%;
+    margin: 0 30px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    box-shadow: 0px 0px 50px 0px rgb(204, 204, 204);
+}
+
+.landingPage_button1_account {
+    transition-duration: 0.5s;
+    transition-property: color background-color;
+    transition-timing-function: ease-out;
+}
+
+.landingPage_button1_account:hover {
+    color: var(--text-light-color);
+    background-color: black;
+}
+
+.landingPage_button1_beneficts_cont {
+    position: relative;
+}
+
+.landingPage_button1_beneficts_text {
+    position: absolute;
+    top: calc(100% + 17px);
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation-name: landingPage_button1_beneficts_text;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes landingPage_button1_beneficts_text {
+    0% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(3px);
+    }
+}
+
+.landingPage_button1_beneficts {
+    background-color: var(--landing-color-1);
+    color: var(--text-light-color);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    transition-property: color background-color;
+}
+
+.landingPage_button1_beneficts:hover {
+    background-color: var(--bg-white);
+    color: var(--text-dark-color);
+}
+
+.landingPage_home_seccion2_div {
+    height: 100%;
+    width: 50%;
+}
+
+.landingPage_home_seccion2_text_cont {
+    align-items: flex-start;
+}
+
+.landingPage_home_seccion2_text_line_cont {
+    margin-bottom: 18px;
+    cursor: pointer;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.landingPage_home_seccion2_text_line_cont:hover > p {
+    -webkit-text-stroke: 2px var(--text-dark-color-3);
+}
+
+.landingPage_home_seccion2_text_line_cont:hover > img {
+    opacity: 1;
+}
+
+.landingPage_home_text_stroke {
+    -webkit-text-stroke: 2px var(--text-dark-color-3);
+}
+
+.landingPage_home_seccion2_div p {
+    font-size: 30px;
+    font-family: var(--font-style-light);
+    pointer-events: none;
+}
+
+.landingPage_home_seccion2_cont > div:first-child {
+    background-color: var(--landing-color-2);    
+}
+
+.landingPage_home_seccion2_cont > div:last-child {
+    background-color: var(--landing-color-3);    
+}
+
+.landingPage_home_seccion2_icon {
+    height: 23px;
+    transform: rotateZ(180deg);
+    margin-right: 10px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+p.landingPage_home_seccion2_slider_text_title {
+    font-size: 48px;
+    margin-bottom: 15px;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    transition-property: color;
+}
+
+.landingPage_home_seccion2_slider_text_cont {
+    cursor: pointer;
+}
+
+.landingPage_home_seccion2_slider_text_cont:hover p.landingPage_home_seccion2_slider_text_title {
+    color: var(--text-light-color);
+}
+
+P.landingPage_home_seccion2_slider_text_subTitle {
+    font-size: var(--font-size-large);
+}
+
+.landingPage_home_seccion2_slider_text_subTitle b {
+    font-size: var(--font-size-large);
+    font-family: var(--font-style-black);
+}
+
+.landingPage_home_seccion2_slider_cont {
+    position: relative;
+    overflow: hidden;
+}
+
+p.landingPage_home_seccion2_div_ADJ_text {
+    position: absolute;
+    transform: rotateZ(-90deg) translateY(100%);
+    z-index: 200;
+    font-size: 185px;
+    font-family: var(--font-style-bold);
+    opacity: 0.15;
+    line-height: 1;
+    right: 0;
+}
+
+.landingPage_home_seccion2_slider_imgAndText_cont {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.landingPage_opacity1 {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.fadeInBottomAnimation {
+    animation-name: fadeInBottomAnimation;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInBottomAnimation {
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landingPage_home_seccion2_slider_button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin: auto;
+    padding: 0 60px;
+    background-color: var(--landing-color-4);
+    opacity: 0;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    transition-property: transform, opacity, background-color;
+    transform: translateY(100px);
+    z-index: 100;
+    width: 200px;
+    min-width: 200px;
+    padding: 0;
+    height: 45px;
+    border-radius: 22.5px;
+}
+
+
+.landingPage_home_seccion2_slider_button:hover {
+    background-color: var(--landing-color-5);
+}
+
+.landingPage_home_seccion2_slider_imgAndText_cont:hover .landingPage_home_seccion2_slider_button {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*************************** Segundo Slider **********************************/
+
+.landingPage_home_jewelrySlider2_cont {
+    width: 100%;
+    min-height: calc(100vh - var(--navbar-height) - 20vh);
+    height: calc(100vh - var(--navbar-height) - 20vh);
+    background-color: var(--bg-white);
+    justify-content: flex-start;
+}
+
+.landingPage_home_jewelrySlider2_controlDiv {
+    height: 100%;
+    width: calc(100% / 3);
+}
+
+.landingPage_home_jewelrySlider2_controlDiv_internal_cont {
+    align-items: flex-end;
+    width: 18rem;
+    max-width:  100%;
+}
+
+.landingPage_home_jewelrySlider2_controlDiv_internal_cont * {
+    text-align: right;
+}
+
+.landingPage_home_jewelrySlider2_title {
+    font-size: 40px;
+    font-family: var(--landing-font-familiy-1);
+    font-weight: 700;
+    margin-bottom: 40px;
+    transition-duration: 0.25s;
+    transition-property: color;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+.landingPage_home_jewelrySlider2_title:hover {
+    color: var(--landing-color-4);
+}
+
+.landingPage_home_jewelrySlider2_subTitle {
+    font-size: var(--font-size-large);
+    line-height: 1.4;
+}
+
+.landingPage_home_jewelrySlider2_button {
+    margin-top: 40px;
+    font-size: var(--font-size-normal);
+    height: 48px;
+    border-radius: 24px;
+}
+
+.landingPage_home_jewelrySlider2_controls_cont {
+    margin-top: 55px;
+}
+
+.landingPage_home_jewelrySlider2_control {
+    height: 25px;
+    aspect-ratio: 1/1;
+    margin-left: 0.25rem;
+    opacity: 0.30;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    filter: invert(100%);
+    transition-duration: 0.25s;
+    transition-property: background-color, filter, opacity;
+    transition-timing-function: ease-out;
+}
+
+.landingPage_home_jewelrySlider2_control:hover {
+    opacity: 1;
+    filter: invert(0);
+    background-color: var(--landing-color-1);
+}
+
+.landingPage_home_jewelrySlider2_controls_cont img:last-child, .landingPage_home_jewelrySlider2_controls_cont_PORTRAIT img:last-child {
+    transform: rotateZ(180deg);
+}
+
+.landingPage_home_jewelrySlider2_slider_cont {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+
+.landingPage_home_jewelrySlider2_slider_internalCont, .landingPage_home_jewelrySlider3_slider_internalCont {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
+.landingPage_home_jewelrySlider2_slider_internalCont img, .landingPage_home_jewelrySlider3_slider_internalCont img {
+    height: 100%;
+    min-width: 50%;
+    width: 50%;
+    object-fit: contain;
+}
+
+.landingPage_home_jewelrySlider3_slider_internalCont img {
+    height: 85%;
+}
+
+.landingPage_home_jewelrySlider2_toLeftAnimation {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: landingPage_home_jewelrySlider2_toLeftAnimation;
+}
+
+@keyframes landingPage_home_jewelrySlider2_toLeftAnimation {
+    0%{
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--slider2translateDistance) * -1));
+    }
+}
+
+.landingPage_home_jewelrySlider2_toRightAnimation {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: landingPage_home_jewelrySlider2_toRightAnimation;
+}
+
+@keyframes landingPage_home_jewelrySlider2_toRightAnimation {
+    0%{
+        transform: translateX(calc(var(--slider2translateDistance) * -1));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/************************************* Reviews *********************************************/
+
+.landingPage_home_reviews_cont {
+    width: 100%;
+    min-height: calc(calc(100vh - var(--navbar-height)) / 2.5);
+    background-color: var(--bg-white);
+    padding: 70px 0;
+    padding-bottom: 175px;
+}
+
+.landingPage_home_reviews_quote {
+    opacity: 0.375;
+    height: 0.75rem;
+    margin-bottom: 30px;
+}
+
+.landingPage_home_reviews_sliderAndControls_cont {
+    width: var(--seccions-landscape-content-width);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+    transition-property: height;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.landingPage_home_jewelrySlider2_controls_cont_PORTRAIT {
+    display: none;
+}
+
+.landingPage_home_reviews_control_cont {
+    height: 100%;
+    width: 40px;
+    background-color: var(--bg-white);
+}
+
+.landingPage_home_reviews_control_img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    opacity: 0.25;
+    cursor: pointer;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    transition-property: opacity;
+}
+
+.landingPage_home_reviews_control_img:hover {
+   opacity: 0.5;
+}
+
+.landingPage_home_reviews_control_img_left {
+    transform: rotateZ(180deg);
+}
+
+.landingPage_home_reviews_slider_cont {
+    flex: 1;
+    overflow: hidden;
+}
+
+.landingPage_home_reviews_slider_internal_cont {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.landingPage_home_reviews_slider_item {
+    min-width: 100%;
+    width: 100%;
+    padding: 0 100px;
+}
+
+.landingPage_home_reviews_slider_item_text {
+    font-family: var(--landing-font-familiy-1);
+    font-size: 40px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.landingPage_home_reviews_slider_item_name {
+    text-transform: uppercase;
+    margin-top: 50px;
+    font-family: var(--font-style-bold);
+}
+
+.landingPage_home_jewelrySlider2_reviewsButton {
+    margin-top: 75px;
+    padding: 0 50px;
+}
+
+/*********************************** Estilos generales *************************************************/
+
+.button_transition_to_blue {
+    transition-duration: 0.25s;
+    transition-property: border-color, color;
+    transition-timing-function: ease-out;
+}
+
+.button_transition_to_blue:hover {
+    border-color: var(--landing-color-4);
+    color: var(--landing-color-4);
+}
+
+.navbar_bgWhite {
+    background-color: var(--bg-white);
+}
+
+.navbar_bgGray{
+    background-color: var(--landig-bg-color);
+}
+
+/******************************************** Responsive *********************************************/
+
+@media only screen and (orientation: portrait) {
+
+    .landingPage_home_container {
+        --titles-size-portrait: 1.25rem;
+    }
+    
+    .landingPage_home_header_buttons_cont {
+        flex-direction: column;
+    }
+
+    .landingPage_button1 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .landingPage_button1_beneficts_cont {
+        margin-top: 1rem;
+    }
+
+    .landingPage_home_seccion2_cont {
+        min-height: calc(100vh - var(--navbar-height));
+        height: calc(100vh - var(--navbar-height));
+        flex-direction: column;
+    }
+
+    .landingPage_home_seccion2_div {
+        width: 100%;
+        height: 50%;
+    }
+
+    p.landingPage_home_seccion2_text {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .landingPage_home_seccion2_slider_cont {
+        height: 50;
+    }
+
+    .landingPage_home_seccion2_slider_img {
+        height: 10rem
+    }
+
+    p.landingPage_home_seccion2_slider_text_title {
+        font-size: var(--titles-size-portrait);
+    }
+
+    .landingPage_home_jewelrySlider2_cont {
+        flex-direction: column-reverse;
+        min-height: calc(100vh - var(--navbar-height));
+        height: calc(100vh - var(--navbar-height));
+    }
+
+    .landingPage_home_jewelrySlider2_controlDiv {
+        height: 50%;
+    }
+
+    .landingPage_home_jewelrySlider2_slider_cont {
+        height: 50%;
+    }
+
+    .landingPage_home_jewelrySlider2_controlDiv_internal_cont {
+        align-items: center;
+    }
+ 
+    .landingPage_home_jewelrySlider2_controlDiv {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .landingPage_home_jewelrySlider2_title {
+        font-size: var(--titles-size-portrait);
+        text-align: center;
+        width: 100%;
+    }
+
+    .landingPage_home_jewelrySlider2_subTitle {
+        text-align: center;
+        width: 100%;
+    }
+
+    .landingPage_home_jewelrySlider2_controls_cont {
+        display: none;
+    }
+
+    .landingPage_home_jewelrySlider2_controls_cont_PORTRAIT {
+        display: initial;
+    }
+
+    .landingPage_home_jewelrySlider2_slider_internalCont img, .landingPage_home_jewelrySlider3_slider_internalCont img {
+        height: 100%;
+        min-width: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    .landingPage_home_beneficts_cont {
+        flex-direction: column;
+    }
+    
+    img.landingPage_home_beneficts_img {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    
+    .landingPage_home_beneficts_cont img:first-child {
+        padding-bottom: 0;
+    }
+
+    .landingPage_home_jewelrySlider3_slider_internalCont {
+        height: 90%;
+    }
+
+    .landingPage_home_reviews_cont {
+        padding: 5rem 0;
+    }
+
+    .landingPage_home_reviews_slider_item {
+        padding: 0;
+    }
+
+    .landingPage_home_reviews_slider_item_text {
+        font-size: var(--titles-size-portrait);
+    }
+
+    .landingPage_home_reviews_sliderAndControls_cont {
+        padding: 0;
+    }
+
+    .landingPage_home_reviews_sliderAndControls_cont img {
+        width: 25px;
+    }
+
+    div.landingPage_home_finalBanner_cont {
+        flex-direction: column;
+        height: 50vh;
+        margin-bottom: 0;
+    }
+
+    .footerBottomSection {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+}

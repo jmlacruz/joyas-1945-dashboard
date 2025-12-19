@@ -1,0 +1,49 @@
+.slider_productCardCont {
+    position: relative;
+    --cardsByRow: 4;
+    --spaces-quanity: calc(var(--cardsByRow) - 1);                  
+    --spaces-total-width: calc(var(--spaces-quanity) * 1rem);
+    --avaliableWidth: calc(100% - var(--spaces-total-width));
+    min-width: calc(var(--avaliableWidth) / var(--cardsByRow));
+    width: calc(var(--avaliableWidth) / var(--cardsByRow));
+    margin-right: 1rem;
+    justify-content: space-around;
+    --height-cardQuantitySelect: 1.5rem;
+    padding-bottom: var(--height-cardQuantitySelect);
+    padding-top: 1.5rem;
+    aspect-ratio: 11/14;
+}
+
+.slider_productCard_CardQuantitySelect_Cont {
+    position: absolute;
+    height: var(--height-cardQuantitySelect);
+    bottom: 0;
+    left: 0;
+}
+
+.slider_productCard_cartImg {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    height: 1.65rem;
+    aspect-ratio: 1/1;
+    z-index: 10;
+}
+
+.slider_productCardDescriptionCont {
+    padding-right: 3rem;
+    top: 0.75rem;
+}
+
+.slider_productCardImg {
+    z-index: 0;
+}
+
+.slider_productCard_Price_Cloth_Stock_Container {
+    min-height: unset;
+    height: fit-content;
+    justify-content: flex-end !important;
+}
+
+
+

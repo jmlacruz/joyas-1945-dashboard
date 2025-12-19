@@ -1,0 +1,68 @@
+.userNavbarOptions_Cont {
+    margin-left: 2rem;
+    align-items: baseline;
+}
+
+.userNavbarOptions_nameCont {
+    width: max-content;
+    text-transform: uppercase;
+    font-size: var(--font-size-small);
+    margin-right: 0.85rem;
+}
+
+.userNavbarOptions_name {
+    text-transform: uppercase;
+    font-size: var(--font-size-small);
+    font-family: var(--font-style-black);
+}
+
+.userNavbarOptions_cartIconCont {
+    position: relative;
+    height:0.85rem;
+}
+
+.userNavbarOptions_cartIconCont:hover img:first-child {
+    filter: brightness(100%);
+}
+
+.userNavbarOptions_cartCount {
+    position: absolute;
+    left: 0;
+    top:0;
+    transform: translateX(-65%) translateY(-65%);  
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--color-web-1);
+    color: var(--text-light-color);
+    z-index: 10;
+    cursor: pointer;
+}
+
+.userNavbarOptions_cartIcon {
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin-right: 0.85rem;
+    cursor: pointer;
+}
+
+.userNavbarOptions_userIconCont {
+    position: relative;
+    height: 0.85rem;
+    aspect-ratio: 1/1;
+}
+
+.userNavbarOptions_userIcon {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/************************ responseive 2º sprint **************************/
+
+@media only screen and (orientation: portrait) {
+
+    .navbarRegisterCont {
+        display: none;
+    }
+}

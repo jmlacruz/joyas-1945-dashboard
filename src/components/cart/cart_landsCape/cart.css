@@ -1,0 +1,369 @@
+.cartPageContainer {
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--color-borders-light-gray);
+}
+
+.cartContainer {
+    width: var(--seccions-landscape-content-width);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+}
+
+.cartPage_index {
+    width: 100%;
+    text-align: left;
+}
+
+.cartPage_title {
+    font-size: 2rem;
+    font-family: var(--font-style-light);
+    margin-bottom: 0.75rem;
+}
+
+.cartPage_subTitle {
+    margin-bottom: 2rem;
+    font-family: var(--font-style-bold);
+}
+
+.cart-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.cart-table {
+    width: 100%;
+    border: 1px solid var(--cart-table-borderColor);
+    border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+    text-align: center;
+    border: 1px solid var(--cart-table-borderColor);
+    border-collapse: collapse;
+    padding: 0.75rem 1.25rem;
+    width: max-content;
+}
+
+.cartTable_deleteButton {
+    height: 1rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border-style: none;
+    border: 1px solid var(--color-web-1);
+    color: var(--color-web-1);
+    line-height: 1;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.cartTable_deleteButton:hover {
+    filter: saturate(250%);
+}
+
+.order-observation {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.order-observation button {
+    background-color: #f5f5f5;
+    border: 1px solid var(--cart-table-borderColor);
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/*****************************/
+
+.cartTable_flexDivCell {
+    width: 100%;
+    height: 100%;
+}
+
+.cart-table_productImg {
+    height: 5rem;
+    width: 33%;
+    object-fit: contain;
+}
+
+.cart-table_productDescriptionCont {
+    width: 67%;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.cart-table_productDescriptionCont * {
+    text-align: left;
+}
+
+td.product-info {
+    padding: 0.25rem 1.25rem;
+}
+
+.cartTable_productRow:hover {
+    background-color: var(--table-bg-gray);
+}
+
+.cart-table_headRow th {
+    border: none;
+    font-size: var(--font-size-extraLarge);
+    font-family: var(--font-style-light);
+}
+
+.cartTable_total {
+    padding-right: 2rem;
+    align-items: flex-end;
+}
+
+.cartTable_total_text1 {
+    font-family: var(--font-style-bold);
+    margin-bottom: 0.5rem;
+}
+
+.cartTable_total_price {
+    font-family: var(--font-style-bold);
+    color: var(--color-web-1);
+    font-size: var(--font-size-xxLarge);
+    margin-bottom: 0.25rem;
+}
+
+.cartTable_total_text2 {
+    font-size: var(--font-size-small);
+    color: var(--text-gray-color-2);
+}
+
+.cart-table_finalRow {
+    background-color: var(--table-bg-gray);
+    height: 6.5rem;
+}
+
+.cartTableLandsCapeGeneralObservation_buttons_cont {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+}
+
+.cartTableLandsCapeGeneralObservation_buttons_cont button {
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.cartTable_button {
+    height: 1.5rem;
+    background-color: transparent;
+    transition-property: border-color color;
+    min-width: max-content;
+    width: 7.5rem;
+    max-width: 100%; 
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.cartTable_button:hover {
+    border-color: var(--color-web-1);
+    color: var(--color-web-1);
+}
+
+.cartTable_descriptionText {
+    text-transform: uppercase;
+    font-size: var(--font-size-large);
+    font-family: var(--font-style-bold);
+    margin-bottom: 0.75rem;
+}
+
+.cartTable_article {
+    color: var(--text-gray-color-2);
+}
+
+.cartTable_observation_cell button:last-child {
+    margin-bottom: 0;
+}
+
+.cartPage_generalObservation_title, .cartPage_observation_title {
+    display: none;
+    margin-bottom: 0.25rem;
+    width: 100%;
+    text-align: left;
+}
+
+.cartTable_observation1_textarea {
+    width: 100%;
+    height: 5rem;
+    resize: none;
+    border: 1px solid var(--cart-table-borderColor);
+    margin-bottom: 0.5rem;
+    text-align: left;
+    padding: 0.25rem;
+}
+
+.cartTable_generalObservation_textArea {
+    height: 3rem;
+}
+
+.cartTable_observation1_textarea:focus {
+    outline: 1px solid var(--color-web-1);
+}
+
+.cartTable_articleText {
+    color: inherit;
+    font-family: var(--font-style-bold);
+}
+
+.cartTable_prices_texts {
+    text-transform: uppercase;
+    font-size: var(--font-size-xxLarge);
+    font-family: var(--font-style-bold);
+    min-width: 6rem ;
+}
+
+.cartPage_firstLineButtons {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/*****************************************/
+
+.selectStyle {
+    margin-top: 1.5rem;
+}
+
+.cartPage_finalizePurchaseButton {
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    width: 16rem;
+    max-width: 100%;
+    margin-top: 1.5rem;
+    background-color: var(--hover-green-color);
+    align-self: flex-end;
+    color: var(--text-light-color);
+    font-size: var(--font-size-small);
+    font-family: var(--font-style-bold);
+    margin-bottom: 3rem;
+    transition-property: background-color;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+.cartPage_finalizePurchaseButton:hover {
+    background-color: var(--buttons-pinkToBlack-hover);
+}
+
+/****************************************/
+
+.cartTable2_container {
+    margin-top: 1.5rem;
+    margin-bottom: 0    ;
+}
+
+.cartTable2_total  {
+    padding-right: 1rem;
+}
+
+.cartTable2_descriptionText {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.cartTable2_flexDivCell {
+    justify-content: flex-start;
+}
+
+.cartTable2_prices_texts {
+    text-transform: uppercase;
+    font-size: var(--font-size-xxLarge);
+    font-family: var(--font-style-bold);
+    margin-left: 0.75rem;
+}
+
+.cartTable2_total > p {
+    margin-bottom: 0.25rem;
+}
+
+
+.cartTable2_total > div {
+    margin-bottom: 0.25rem;
+}
+
+.cartTable2_finalTexts {
+    font-family: var(--font-style-bold);
+}
+
+.cartTable2_discount {
+    font-family: var(--font-style-light);
+    text-decoration: line-through;
+}
+
+.cartTable_buyerTypeCont {
+    width: 100%;
+    margin-top: 1.5rem;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.cartTable_fiscalDataInputCont {
+    width: 30%;
+    margin-top: 1rem;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.cartTable_buyerTypeCont_inputs {
+    height: 2.25rem;
+    width: 100%;
+    border: 1px solid var(--color-borders-light-gray);
+    border-radius: 0.25rem;
+    text-align: left;
+    padding: 0 0.5rem;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-property: outline-color;
+    transition-timing-function: ease-out;
+    outline-color: transparent;
+}
+
+.cartTable_buyerTypeCont_inputs::placeholder {
+    color: var(--text-gray-color-2);
+}
+
+.cartTable_buyerTypeCont_inputs:focus {
+    outline: 1px solid var(--color-web-1);
+}
+
+.cartTable_buyerTypeCont_label {
+    width: 100%;
+    text-align: left;
+    font-size: var(--font-size-small);
+    color: var(--text-gray-color-2);
+}
+
+.cartTable_bankDataText {
+    width: 100%;
+    font-family: var(--font-style-bold);
+    margin-top: 2.5rem;
+}
+
+@media only screen and (orientation: landscape) and (width < 1200px) {
+
+    .cartTable_observation1_textarea {
+        height: 4rem;
+    }
+}
+
+/* Estilos para el botón deshabilitado */
+.cartPage_finalizePurchaseButton.disabled {
+    background-color: var(--color-borders-light-gray);
+    color: var(--text-gray-color-2);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.cartPage_finalizePurchaseButton.disabled:hover {
+    background-color: var(--color-borders-light-gray);
+}

@@ -1,0 +1,15 @@
+.landingPage_home_beneficts_cont {
+    width: 100%;
+    min-height: calc(calc(100vh - var(--navbar-height)) / 2);
+    height: calc(calc(100vh - var(--navbar-height)) / 2);
+}
+
+.landingPage_home_beneficts_img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.landingPage_home_beneficts_img2 {
+    object-position: right;
+}

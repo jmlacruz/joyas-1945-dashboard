@@ -1,0 +1,42 @@
+.select1Cont {
+    position: relative;
+    height: 2.25rem;
+    width: 16rem;
+    max-width: 100%;
+    border-radius: 1.25rem;
+    background-color: var(--bg-white);
+    cursor: pointer;
+    align-self: flex-end;
+    box-shadow: 7px 7px 35px -14px rgba(0,0,0,0.40);
+    padding-right: 1rem;
+}
+
+.select1_symbol {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: var(--font-style-light);
+    transform: scaleY(75%) scaleX(125%);
+}
+
+.select1_optionsCont {
+    position: absolute;
+    background-color: var(--bg-white);
+    left: 0;
+    width: 100%;
+    bottom: calc(100% + 0.25rem);
+    align-items: flex-start;
+    border: 1px solid var(--cart-table-borderColor);
+}
+
+.select1_optionsCont p {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 1rem;
+}
+
+.select1_optionsCont p:hover{
+    background-color: #E8F8F0;
+}

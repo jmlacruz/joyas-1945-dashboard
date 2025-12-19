@@ -1,0 +1,740 @@
+.homeContainer {
+    background-color: var(--bg-color-1);
+    align-content: flex-start;
+    --brand-select-cont-height: 9rem; 
+    --filter-cont-height: 5rem;
+    --homeFinderMainCont_width: unset;
+    --homeFilterCont_width: fit-content;
+    --filter-buttons-width: 125px;
+}
+
+.homeProductsContainer {
+    min-height: calc(100vh - var(--navbar-height) - var(--brand-select-cont-height) - var(--filter-cont-height));
+    width: 100%;
+    gap: var(--homeCards-gap);
+}
+
+.homePagesIndexContainer {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.homeNumberOfPage {
+    margin: 0 0.15rem;
+    font-family: var(--font-style-black);
+}
+
+.homePaginationArrow {
+    font-family: var(--font-style-black);
+}
+
+.homePaginationButton {
+    height: 1.25rem;
+    width: 1.25rem;
+    cursor: pointer;
+}
+
+.homePaginationButton:hover {
+    background-color: white;
+}
+
+.actualPageNumberGray {
+    color: var(--text-gray-color-2)
+}
+
+/******************************* Sección de selección de marca ***************************************/
+
+.homePageBrandSelectCont {
+    position: relative;
+    width: 100%;
+    height: var(--brand-select-cont-height);
+}
+
+.homePageBrandSelectImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    z-index: 1;
+}
+
+.homeBrandsSelectMainCont {
+    width: 100%;
+    max-width: var(--seccions-landscape-content-width);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: flex-start;
+}
+
+.homeBrandsSelectCont {
+    z-index: 20;
+    align-items: flex-start;
+}
+
+.homeBrandsSelectTitle {
+    margin-bottom: 0.5rem;
+    color: var(--text-gray-color);
+}
+
+.homeBrandsSelect {
+    position: relative;
+    height: 2.5rem;
+    width: 12rem;
+    border-radius: 1.25rem;
+    background-color: var(--bg-white);
+    cursor: pointer;
+    box-shadow: 10px 10px 40px -20px rgba(0,0,0,0.40);
+}
+
+.homeBrandDropdownCont {
+    position: absolute;
+    width: 100%;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    background-color: var(--bg-white);
+    box-shadow: 16px 21px 69px -33px rgba(0,0,0,0.75);
+}
+
+.currencyBrandImg {
+    width: 70%;
+    max-height: 35%;
+    object-fit: contain;
+}
+
+.brandLogoImg {
+    object-fit: contain;
+    height: 3rem;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.brandLogoImg:hover {
+    background-color: #E8F8F0;
+}
+
+.homeBrandSelectSymbol {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: var(--font-style-light);
+    transform: scaleY(75%) scaleX(125%);
+}
+
+/*******************************************************************/
+
+.homePageFiltersCont {
+    width: 100%;
+    height: var(--filter-cont-height);
+    background-color: white;
+    border-top: 1px solid var(--color-borders-light-gray);
+    border-bottom: 1px solid var(--color-borders-light-gray);
+}
+
+.homePageFiltersInternalCont {
+    width: 100%;
+    height: 100%;
+    max-width: var(--seccions-landscape-content-width);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+}
+
+.homePageFinderMainCont {
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.homePageFinderCont {
+    position: relative;
+    width: 100%;
+}
+
+.searchWordsResultsCont {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    align-items: flex-start;
+    z-index: 10;
+    box-shadow: 10px 10px 40px -20px rgba(0,0,0,0.40);
+    --borders: 1px solid rgb(228, 228, 228);
+}
+
+.searchWordsResultsCont .searchWordsResult:first-child {
+    border-top: var(--borders);
+}
+
+.searchWordsResult {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+    border-left: var(--borders);
+    border-right: var(--borders);
+}
+
+.searchWordsResultText {
+    text-align: left;
+    text-transform: uppercase;
+    padding: 0.35rem 0.75rem;
+    width: 100%;
+    border-bottom: var(--borders);
+}
+
+.searchWordsResultText:hover {
+    background-color: var(--bg-gray);
+}
+
+.searchWordsResultText span {
+    font-family: var(--font-style-medium);
+}
+
+.homePageFinderSearchInput {
+    border: 1px solid var(--color-borders-light-gray);
+    font-size: var(--font-size-large);
+    text-transform: uppercase;
+    text-align: left;
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    padding-right: 2rem;
+    padding-left: 1rem;
+    width: 100%;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    transition-property: outline-color outline-width;
+    outline-width: 1px;
+    outline-color: var(--color-borders-light-gray);
+}
+
+.homePageFinderSearchIcon {
+    height: 0.75rem;
+    position: absolute;
+    right: 0.75rem;
+}
+
+.homePageFinderInput:focus {
+    outline-color: var(--color-web-light-pink);
+}
+
+.homePageFinderInput::placeholder {
+    color: var(--text-gray-color-2);
+}
+
+.homePageFilterCont {
+    height: 100%;
+    width: var(--homeFilterCont_width);
+    border-right: 1px solid var(--color-borders-light-gray);
+    border-left: 1px solid var(--color-borders-light-gray);
+    padding: 0 0.75rem;
+    align-content: center;
+    margin: 0 1rem;
+}
+
+.homePageFilterOptionCont {
+    height: 1.35rem;
+    border-radius: 0.75rem;
+    padding: 0 0.25rem;
+    border: 1px solid var(--color-web-1);
+    width: 125px;
+    min-width: 125px;
+    margin: 0.25rem;
+}
+
+.homePageOrderCont {
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.homePageFilterOptionContToGreenTransition {
+    transition-property: filter;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+}
+
+.homePageFilterOptionContToGreenTransition:hover {
+   filter: invert(100%) saturate(400%);
+   cursor: pointer;
+}
+
+.homePageFilterOptionIcon {
+    height: 35%;
+    margin-right: 0.5rem;
+}
+
+.homePageFilterOptionText {
+    color: var(--color-web-1);
+    font-size: var(--font-size-small);
+}
+
+.homePageOrderText {
+    margin-right: 0.5rem;
+}
+
+.homePageOrderOptionCont {
+    position: relative;
+    border-color: var(--color-borders-light-gray);
+    cursor: pointer;
+    transition-property: border-color;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    margin-left: 0;
+}
+
+.homePageOrderOptionCont:hover {
+    border-color: var(--color-web-1);
+}
+
+.homePageOrderOptionCont:hover .homePageOrderOptionText:first-child {
+    color: var(--color-web-1);
+}
+
+.filterOrderOptionsDropDownCont {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: max-content;
+    background-color: var(--bg-white);
+    align-items: flex-start;
+    border: 1px solid var(--color-borders-light-gray);
+    z-index: 50;
+    box-shadow: 10px 10px 40px -20px rgba(0,0,0,0.40);
+}
+
+.filterOrderOptionsDropDownCont p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 0.275rem 0.75rem;
+}
+
+.filterOrderOptionsDropDownCont p:hover {
+    background-color: #f3f3f3;
+}
+
+.filterOrderOptionsDropDownCont p:last-child {
+    border-top: 1px solid var(--color-borders-light-gray);
+    padding: 0.5rem 0.75rem; 
+}
+
+.filterOrderOptionsDropDowSelected {
+    font-family: var(--font-style-black);
+}
+
+.homePageOrderText {
+    font-size: var(--font-size-small);
+}
+
+.homePageOrderOptionText {
+    transition-property: color;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    color: var(--text-dark-color);
+}
+
+.homePageOrderOptionIcon {
+    margin-right: 0;
+    margin-left: 0.5rem;
+    height: 50%;
+    filter: brightness(0);
+    transition-property: filter;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+}
+
+.homePageOrderOptionCont:hover img:nth-child(2) {
+    filter: brightness(100%);
+}
+
+.homePageOrderTextFindedQuantity {
+    width: max-content;
+    margin-left: 1rem;
+    font-size: var(--font-size-small);
+}
+
+.homePageOrderTextFindedQuantityBold {
+    font-size: var(--font-size-small);
+    font-family: var(--font-style-black);
+}
+
+.noResultsText {
+    font-size: var(--font-size-medium);
+    font-family: var(--font-style-black);
+    color: var(--text-gray-color-2);
+}
+
+/*********************************/
+
+.filtersShownCont {
+    width: 100%;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition-property: max-height;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    text-align: center;
+}
+
+.filtersShownIntCont {
+    width: 100%;
+    max-width: var(--seccions-landscape-content-width);
+    display: inline-block;
+}
+
+.filtersShownInt2Cont {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+}
+
+@media only screen and (width < 1366px) {
+    .filtersShownInt2Cont {
+        justify-content: center;
+    }
+}
+
+.filtersShownInternalCont {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.filtersShownActive {
+    border-bottom: 1px solid var(--color-borders-light-gray);    
+}
+
+.filtersShownTypesCont {
+    height: 100%;
+}
+
+.filterInputCont {
+    margin: 0 0.5rem;
+}
+
+.filtersPriceRangeCont {
+    padding-left: 2rem;
+    height: 100%;
+}
+
+.filterButton {
+    border-style: none;
+    background-color: var(--color-web-1);
+    color: var(--text-light-color);
+    height: 1.5rem;
+    padding: 0 1.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.filterPriceInputsCont {
+    color: var(--color-borders-light-gray);
+}
+
+.filterPriceInput {
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-borders-light-gray);
+    margin: 0 0.5rem;
+    height: 1.5rem;
+    text-align: left;
+    padding: 0 0.5rem;
+    padding-right: 0.25rem;
+    width: 5rem;
+}
+
+.filtersShownTitle {
+    font-family: var(--font-style-black);
+    text-transform: uppercase;
+    font-size: var(--font-size-small);
+    margin-right: 0.25rem;
+}
+
+.filterCheckBox {
+    position: relative;
+    margin-right: 0.5rem;
+}
+
+.filterCheckBox_hidden {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.filterCheckBox_shown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    pointer-events: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--color-borders-light-gray);
+    z-index: 1;
+}
+
+.filterCheckBox input:checked ~ .filterCheckBox_shown:after {
+    position: absolute;
+    border-radius: 50%;
+    content: "\2714";
+    font-size: 7px;
+    line-height: 1;
+    color: white;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: var(--color-web-1);
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.filterCategorieName {
+    font-size: var(--font-size-small);
+    font-family: var(--font-style-medium);
+}
+
+.filterPriceRangeTitle {
+    text-transform: uppercase;
+    font-size: var(--font-size-small);
+    font-family: var(--font-style-black);
+}
+
+/************************ responseive 2º sprint **************************/
+
+@media only screen and (orientation: portrait) {
+    
+    .filtersShownCont {
+        padding: 0.5rem 2rem;
+        justify-content: space-between;
+    }
+
+    .filtersShownInt2Cont {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .filtersShownTypesCont {
+        margin-top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .filtersShownTypes {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+         
+    .filtersPriceRangeCont {
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 4rem;
+        align-items: flex-start;
+        justify-content: flex-end;
+        margin-bottom: 0;
+    }
+
+    .filterPriceInputsCont {
+        width: 100%;
+    }
+
+    .filterPriceInputsCont .filterPriceInput:nth-child(2){
+        margin-left: 0.5rem;
+    }
+    
+    .filterPriceInputsCont .customCheck1_Cont:first-child {
+        margin-left: 0 !important;
+    } 
+
+    .filterInputCont {
+        margin: 0;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .filterPriceInput {
+        flex: 1;
+        margin-left: 0;
+    }
+
+    .filterPriceInputMax {
+        margin-right: 0;
+    }
+
+    .filtersShownTitle {
+        margin-bottom: 1rem;
+    }
+
+    .filterPriceRangeTitle {
+        margin-bottom: 1rem;
+    }
+
+    .filterPriceInputsCont .filterPriceInput:nth-child(2){
+        margin-left: 0.5rem;
+    }
+    
+    .filterPriceInput {
+       margin-left: 0;
+    }
+
+    .filterButton {
+        width: 100%;
+        height: 2rem;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .homePageFiltersCont {
+        height: fit-content;
+        flex-direction: column;
+        padding: 1.5rem var(--padding-horizontal-seccions-portrait);
+    }
+
+    .homePageOrderCont {
+        flex-direction: column;
+        padding-left: 0
+    }
+
+    .homePageFinderMainCont {
+        position: relative;
+        width: 100%;
+        min-width: unset;
+        border-right: none;
+    }
+
+    .homePageFinderCont {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .homePageFilterCont {
+        width: 100%;
+        padding: 0;
+        border-right: none;
+        border-left: none;
+        margin: 1.5rem 0;
+    }   
+
+    .homePageFilterCont div:first-child {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .homePageFilterCont div:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .homePageOrderText {
+        margin: 0.5rem 0;
+        margin-right: 0;
+    }
+
+    .homePageOrderCont {
+        width: 100%;
+    }
+    
+    .homePageOrderTextFindedQuantity {
+        margin-top: 1.5rem;
+        margin-left: 0;
+    }
+
+    .homePageFilterOptionCont {
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 1.25rem;
+        margin-top: 0;
+    }
+
+    .filterOrderOptionsDropDownCont {
+        width: 100%;
+    }
+
+    .homePageBrandSelectCont {
+        justify-content: center;
+    }
+
+    .homeBrandsSelectCont {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 var(--padding-horizontal-seccions-portrait);
+    }
+ 
+    .homeBrandsSelect {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (orientation: landscape) and (width < 1200px) {
+
+    .homePageFiltersCont {
+        height: fit-content;
+        position: relative;
+        flex-wrap: wrap;
+        padding: 0.75rem 0;
+    }
+    
+    .homePageFiltersInternalCont {
+        position: relative;
+        justify-content: center;
+        min-height: 5rem;
+    }
+    
+    .homePageFilterCont {
+        border-right: none;
+    }
+
+    .homePageFinderMainCont {
+        position: relative;
+        flex: 1;
+        max-width: 40%;
+        min-width: 40%;
+    }
+
+    .homePageFinderCont {
+        margin-left: 0;
+    }
+   
+    .homePageFinderSearchInput {
+        width: 100%;
+    }
+
+    .filterOrderOptionsDropDownCont {
+        left: unset;
+        right: 0;
+    }
+
+    .filtersShownCont {
+        justify-content: space-between;
+    }
+
+    .filtersShownTypesCont {
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    .filtersPriceRangeCont {
+        padding-left: 0;
+        width: 100%;
+        padding-bottom: 1rem;
+        padding-top: 0;
+    }
+}

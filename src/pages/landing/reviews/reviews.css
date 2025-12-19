@@ -1,0 +1,111 @@
+.reviewsPageCont {
+    justify-content: flex-start;
+}
+
+.reviewsPage_reviews_cont {
+    width: 55rem;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    --gap: 20px;
+    gap: var(--gap);
+}
+
+.reviweCard_cont {
+    position: relative;
+    border: 1px solid var(--color-borders-light-gray);
+    width: calc(50% - var(--gap));
+    --reviweCard-cont-height: 230px;
+    height: 230px;
+    --reviweCard-cont-padding: 50px;
+    padding: 50px;
+    margin-bottom: 130px;
+}
+
+.reviewCard_quote_img {
+    height: 17.5px;
+    aspect-ratio: 1/1;
+}
+
+.reviewCard_date {
+    position: absolute;
+    bottom: 100%;
+    left: 10%;
+    transform: translateY(50%);
+    display: inline-block;
+    max-width: fit-content;
+    background-color: var(--bg-white);
+    padding: 0 17.5px;
+}
+
+.reviewCard_quote_img {
+    position: absolute;
+    top: var(--reviweCard-cont-padding);
+    transform: translateY(-100%);
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.reviewCard_review_text {
+    letter-spacing: 1px;
+    line-height: 1.4;
+    height: fit-content;
+    max-height: calc(var(--reviweCard-cont-height) - 2 * var(--reviweCard-cont-padding));
+    overflow-y: auto;
+}
+
+.reviewCard_review_text::-webkit-scrollbar {                 /* ".cartDropDrown" es la clase del elemento que tiene el scroll */
+    width: 0.35rem
+}
+
+.reviewCard_review_text::-webkit-scrollbar-track {           /* Fondo del scroll */
+    background-color: transparent;
+}
+
+.reviewCard_review_text::-webkit-scrollbar-thumb {           /* Barra del scroll */
+    background-color: var(--landing-color-4);
+    border-radius: 0.175rem;
+}
+
+.reviewCard_review_text::-webkit-scrollbar-thumb:hover {     /* Efceto hover sobre scroll */
+    background-color: #52bdff;
+    cursor: pointer;
+}
+
+.reviewCard_review_text::-webkit-scrollbar-button,           /* Flechas de scroll */
+.reviewCard_review_text::-webkit-scrollbar-up {
+    display: none;
+}
+
+.reviewCard_stars_cont {
+    position: absolute;
+    color: var(--landing-color-1);
+    font-size: 17.5px;
+    background-color: var(--bg-white);
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+    letter-spacing: 2px;
+    display: inline-block;
+    max-width: fit-content;
+    padding: 0 5px;
+}
+
+.reviewCard_name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 15px);
+    font-family: var(--font-style-bold);
+    text-transform: capitalize;
+}
+
+@media only screen and (orientation: portrait) { 
+    .reviweCard_cont {
+        width: 100%;
+        margin-bottom: 4rem;
+        height: fit-content;
+    }
+}

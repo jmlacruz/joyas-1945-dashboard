@@ -1,0 +1,119 @@
+.myAccount_pageContainer {
+    justify-content: flex-start;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--color-borders-light-gray);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.myAccount_container {
+    align-items: flex-start;
+}
+
+.myAccount_title {
+    font-size: 1.25rem;
+    font-family: var(--font-style-medium);
+}
+
+.myAccount_indications {
+    color: var(--text-gray-color);
+    margin: 1.25rem 0;
+}
+
+.myAccount_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.myAccount_table tr {
+   height: 2.75rem;
+}
+
+.myAccount_table td {
+    border: 1px solid var(--color-borders-light-gray);
+    width: 50%;
+    height: 100%;
+}
+
+.myAccount_table_tdInternalDiv {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.myAccount_table_tdInternalDiv label {
+   margin-bottom: 0.25rem;
+   color: var(--text-gray-color-2);
+}
+
+.myAccount_table_tdInternalDiv input {
+    width: 100%;
+    text-align: left;
+    border: none;
+    color: var(--text-gray-color);
+    font-family: var(--font-style-medium);
+}
+
+.myAccount_table_tdInternalDiv input:focus {
+    outline: none;
+}
+
+tr.myAccount_table_finalRow {
+    height: 4rem;
+}
+
+.myAccount_table_finalRowTitle {
+    margin-bottom: 0.5rem;
+    color: var(--text-gray-color);
+}
+
+.myAccount_saveButtonCont {
+    margin-top: 2rem;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*****************************************************************/
+
+@media only screen and (orientation: portrait) {
+  
+    .myAccount_table {
+        max-width: 100%;
+    }
+
+    .myAccount_table td {
+        border: 1px solid var(--color-borders-light-gray);
+    }
+
+    .myAccount_table td * {
+        text-align: left;
+    }
+    
+    .myAccount_table_tdInternalDiv {
+        padding-left: 0.25rem;
+        padding-right: 0;
+    }
+
+    .myAccount_checksCont div {
+        margin-right: 0.5rem;
+    }
+
+    .myAccount_checksCont div:last-child {
+        margin-right: 0;
+    }
+
+    .myAccount_saveButtonCont {
+        flex-direction: column;
+    }
+    
+    .myAccount_saveButtonCont div:first-child {
+        margin-right: 0;
+    }
+
+    .myAccount_saveButtonCont button:nth-child(2) {
+        margin-top: 1rem;
+    }
+}

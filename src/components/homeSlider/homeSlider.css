@@ -1,0 +1,35 @@
+.loginSliderCont {
+    width: calc(100% - var(--login-height));
+    height: var(--login-height);
+    /* align-content: flex-start; */
+    overflow: hidden;
+    position: relative;
+}
+
+.imageEffect_mainCont {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.imageEffect_imageCont {
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.imageEffect_imageCont img {
+    height: 100%;
+    max-width: 100%;
+    opacity: 0;
+}
+
+.imageEffect_square {
+    position: absolute;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform-origin: 0 0;
+}

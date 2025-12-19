@@ -1,0 +1,177 @@
+.landingPageNews_cont {
+    justify-content: flex-start;
+}
+
+.landingPageNews_optionsBar_cont {
+    width: 100%;
+    height: 115px;
+    border-bottom: 1px solid var(--color-borders-light-gray);
+    background-color: var(--bg-white);
+}
+
+.landingPageNews_optionsBar_internal_cont {
+    height: 100%;
+    width: 55rem;
+    max-width: 100%;
+    padding: 0 1rem;
+    justify-content: space-around;
+}
+
+.landingPageNews_optionsBar_img_cont {
+    height: 100%;
+    filter: grayscale(100%);
+    transition-duration: 0.25s;
+    transition-property: filter;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+.landingPageNews_optionsBar_img_cont:hover {
+    filter: grayscale(0);
+}
+
+.landingPageNews_optionsBar_cont img {
+    height: 27.5%;
+}
+
+.landingPageNews_optionsBar_cont p {
+    color: var(--landing-color-4);
+    margin-top: 10px;
+    font-size: var(--font-size-small);
+}
+
+.landingPageNews_sliderCont {
+    width: 55rem;
+    max-width: 100%;
+    padding: 0 1rem;
+    min-height: calc(100vh - var(--navbar-height) - 25vh);
+    height: calc(100vh - var(--navbar-height) - 25vh);
+    justify-content: flex-start;
+}
+
+.landingPageNews_slider_internal_cont {
+    width: 100%;
+    height: 100%;
+    --cards-gap: 30px;
+    gap: var(--cards-gap);
+    padding: var(--cards-gap) 0;
+}
+
+.landingPageNews_slider_product_card_cont {
+    position: relative;
+    width: calc(100% / 3);
+    height: 100%;
+    box-shadow: 2px 4px 8px 0px rgba(168, 172, 185, 0.404);
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom: 40px;
+    background-color: var(--bg-white);
+    cursor: pointer;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    transition-property: transform, box-shadow;
+    justify-content: flex-start;
+}
+
+.landingPageNews_slider_product_card_cont:hover {
+    transform: scale(1.025);
+    box-shadow: 4px 8px 24px 0px rgba(168, 172, 185, 0.473)
+}
+
+.landingPageNews_slider_product_card_cont:hover .landingPageNews_slider_product_card_eye_cont {
+    opacity: 0.85;
+}
+
+.landingPageNews_slider_product_card_img {
+    width: 100%;
+    min-height: 92.5%;
+    height: 92.5%;
+    max-height: 92.5%;
+    object-fit: contain;
+}
+
+.landingPageNews_slider_product_card_text {
+    text-transform: uppercase;
+    font-size: var(--font-size-large);
+}
+
+.landingPageNews_slider_product_card_eye_cont {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
+    margin: auto;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    transition-property: opacity;
+    opacity: 0;
+}
+
+.landingPageNews_slider_product_card_eye {
+    height: 0.5rem;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    margin-right: 10px;
+    opacity: 0.6;
+}
+
+.landingPageNews_slider_pagination_cont {
+    width: 100%;
+    height: 115px;
+    border-top: 1px solid var(--color-borders-light-gray);
+    background-color: var(--bg-white);
+}
+
+.landingPageNews_slider_pagination_number_cont {
+    height: 40%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    margin: 0 4px;
+}
+
+.landingPageNews_slider_pagination_number_cont:hover .landingPageNews_slider_pagination_number{
+    color: var(--landing-color-4);
+}
+
+.landingPageNews_slider_pagination_number_cont_active {
+    border-radius: 50%;
+    box-shadow: var(--landing-shadows);
+    pointer-events: none;
+}
+
+.landingPageNews_slider_pagination_number_cont_active p:first-child{
+    color: var(--landing-color-4);
+}
+
+.landingPageNews_slider_pagination_number {
+    font-family: var(--font-style-black);
+    color: var(--text-gray-color);
+    transition-duration: 0.25s;
+    transition-property: color;
+    transition-timing-function: ease-out;
+}
+
+.finalBannerClass {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+@media only screen and (orientation: portrait) { 
+
+    .landingPageNews_slider_product_card_cont {
+        width: 100%;
+    }
+
+    .landingPageNews_slider_internal_cont {
+        flex-wrap: wrap;
+    }
+
+    .landingPageNews_sliderCont {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+        min-height: unset;
+        height: unset;
+        justify-content: flex-start;
+    }
+}

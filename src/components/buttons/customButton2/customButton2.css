@@ -1,0 +1,20 @@
+
+.customButton2 {
+    border-style: none;
+    background-color: var(--color-web-1);
+    color: var(--text-light-color);
+    --button-height: 1.75rem;
+    height: var(--button-height);
+    border-radius: calc(var(--button-height) / 2);
+    padding: 0 1rem;
+    font-family: var(--font-style-bold);
+    font-size: var(--font-size-small);
+    transition-property: background-color;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+.customButton2:hover {
+    background-color: var(--buttons-pinkToBlack-hover);
+}

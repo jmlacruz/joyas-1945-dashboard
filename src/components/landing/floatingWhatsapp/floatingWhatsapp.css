@@ -1,0 +1,48 @@
+.landingPage_ws_floating_cont {
+    position: fixed;
+    --cont-width: 30px;
+    right: var(--cont-width);
+    bottom: var(--cont-width);
+    height: 61px;
+    cursor: pointer;
+}
+
+.landingPage_ws_floating_cont:hover {
+    filter: brightness(90%);
+}
+
+.landingPage_ws_floating_cont:hover .landingPage_ws_floating_text {
+    transform: translateX(calc(-100% - var(--cont-width)));
+    opacity: 1;
+}
+
+.landingPage_ws_floating {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    filter: hue-rotate(30deg) brightness(95%);
+    box-shadow: 5px 5px 20px 0 rgb(192, 192, 192);
+    background-color: white;
+    z-index: 100;
+    padding: 1px;
+}
+
+.landingPage_ws_floating_text {
+    position: absolute;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: max-content;
+    background-color: var(--landing-color-7);
+    padding: 0 15px;
+    color: var(--text-light-color);
+    font-family: var(--font-style-bold);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    padding-right: 60px;
+}

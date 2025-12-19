@@ -1,0 +1,55 @@
+.customCheck1_Cont {
+    margin-right: 1.25rem;
+}
+
+.customCheck1_checkBox {
+    position: relative;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.4rem
+}
+
+.customCheck1_checkBoxHidden {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.customCheck1_checkBoxShown {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-white);
+    border: 2px solid var(--color-borders-light-gray);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.customCheck1_Cont input:checked ~ .customCheck1_checkBoxShown {              /* el simbolo ~ es para seleccionar un hermano */
+    border: 2px solid var(--color-web-1);
+}
+
+.customCheck1_Cont input:checked ~ .customCheck1_checkBoxShown:after {
+    position: absolute;
+    content: "\2714";
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: var(--color-web-1);
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}

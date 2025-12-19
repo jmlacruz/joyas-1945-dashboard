@@ -1,0 +1,129 @@
+.contactPage_container {
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+}
+
+.contact_container {
+    align-items: center;
+}
+
+.contact_index {
+    align-self: flex-start;
+    margin-bottom: 2rem;
+}
+
+.contact_title {
+    font-size: 2.25rem;
+    font-family: var(--font-style-light);
+    margin-bottom: 0.75rem;
+}
+
+.contact_subTitle {
+    font-family: var(--font-style-bold);
+    margin-bottom: 5rem;
+}
+
+.contact_formTitle {
+    font-size: 1.25rem;
+    font-family: var(--font-style-light);
+    margin-bottom: 1.5rem;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-areas: "name last_name"
+                         "email email"
+                         "message message";
+    grid-template-columns: 50% 50%;
+    width: 90%;
+    border: 1px solid var(--color-borders-light-gray);
+    border-radius: 0.35rem;
+    --rows-height: 2.75rem;
+}
+
+.formGrid > div {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+.formGrid label {
+   color: var(--text-gray-color);
+}
+
+.formGrid input, .formGrid textarea {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    border: none;
+}
+
+.formGrid input:focus, .formGrid textarea:focus {
+    outline: none;
+}
+
+.formGrid textarea {
+    resize: none;
+}
+
+.form_name {
+    grid-area: name;
+    height: var(--rows-height);
+}
+
+.form_lastName {
+    grid-area: last_name;
+    height: var(--rows-height);
+    border-left: 1px solid var(--color-borders-light-gray);
+}
+
+.form_email {
+    grid-area: email;
+    height: var(--rows-height);
+    border-top: 1px solid var(--color-borders-light-gray);
+    border-bottom: 1px solid var(--color-borders-light-gray);
+}
+
+.form_message {
+    grid-area: message;
+    height: 7.5rem;
+}
+
+.contact_sendButton {
+    border-style: none;
+    background-color: var(--color-web-1);
+    color: var(--text-light-color);
+    --button-height: 1.75rem;
+    height: var(--button-height);
+    border-radius: calc(var(--button-height) / 2);
+    padding: 0 1rem;
+    font-family: var(--font-style-bold);
+    font-size: var(--font-size-small);
+    margin-top: 2rem;
+    transition-property: background-color;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+.contact_sendButton:hover {
+    background-color: var(--buttons-pinkToBlack-hover);
+}
+
+.contact_sendText {
+    color: var(--color-web-1);
+    border: 1px solid var(--color-web-1);
+    border-radius: 0.5rem;
+    height: 3rem;
+    width: 30rem;
+    max-width: calc(100% - 2rem);
+    font-family: var(--font-style-black);
+    font-size: var(--font-size-large);
+}
+
+@media only screen and (orientation: portrait), (orientation: landscape) and (width < 1200px){
+
+    .contact_index {
+        margin-left: var(--padding-horizontal-seccions-portrait);
+    }
+}

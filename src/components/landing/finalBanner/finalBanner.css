@@ -1,0 +1,61 @@
+.landingPage_home_finalBanner_main_cont {
+    width: 100%;
+}
+
+.landingPage_home_finalBanner_cont {
+    width: calc(var(--seccions-landscape-content-width) - 2rem);
+    max-width: 100%;
+    background-color: var(--landing-color-3);
+    margin-bottom: 100px;
+    justify-content: space-between;
+    padding: 40px 60px;
+    background-image: url("../../../../public/images/landing/bottomBanner.png");
+    background-repeat: no-repeat;
+    background-position: 60%;
+}
+
+.landingPage_home_finalBanner_title {
+    font-family: var(--landing-font-familiy-1);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--landing-color-6);
+}
+
+.landingPage_home_finalBanner_text_cont {
+    align-items: flex-start;
+}
+
+.landingPage_home_finalBanner_subTitle {
+    font-size: var(--font-size-extraLarge);
+    color: var(--landing-color-6);
+    margin-bottom: 10px;
+}
+
+.landingPage_home_finalBanner_button {
+    border: none;
+    height: 42px;
+    border-radius: 21px;
+    padding: 0 20px;
+    transition-duration: 0.25s;
+    transition-property: color, background-color;
+    transition-timing-function: ease-out;
+}
+
+.landingPage_home_finalBanner_button:hover {
+    color: var(--text-light-color);
+    background-color: var(--landing-color-4);
+}
+
+@media only screen and (orientation: portrait) { 
+
+    .landingPage_home_finalBanner_cont {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px;
+    }
+
+    .landingPage_home_finalBanner_text_cont {
+        align-items: center;
+        width: 100%;
+    }
+}

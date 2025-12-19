@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'gotham book';
+    src: url('../public/fonts/GothamBook.woff') format("woff");   /*font-family: 'gotham book', sans-serif;*/
+}
+@font-face {
+    font-family: 'gotham light';
+    src: url('../public/fonts/GothamLight.woff') format("woff");   /*font-family: 'gotham light', sans-serif;*/
+}
+@font-face {
+    font-family: 'gotham medium';
+    src: url('../public/fonts/GothamMedium.woff') format("woff");   /*font-family: 'gotham medium', sans-serif;*/
+}
+@font-face {
+    font-family: 'gotham bold';
+    src: url('../public/fonts/GothamBold.woff') format("woff");   /*font-family: 'gotham bold', sans-serif;*/
+}
+@font-face {
+    font-family: 'gotham black';
+    src: url('../public/fonts/GothamBlack.woff') format("woff");   /*font-family: 'gotham black', sans-serif;*/
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('../public/fonts/Raleway.woff2') format("woff2");   /*font-family: 'raleway', sans-serif;*/
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /*   font-family: "Playfair Display", serif; */
+
+:root { 
+    --color-web-1: #3DB0F5;
+     
+    --color-web-light-pink: #9ad8ff;
+    --hover-green-color: #05DA6A;
+
+    --bg-color-1: #F3F3F3;
+    --bg-white: #FFFFFF;
+    --bg-gray: #f3f3f3;
+    
+    --font-size-xs: 10px;
+    --font-size-small: 12px;
+    --font-size-normal: 14px;
+    --font-size-large: 16px;
+    --font-size-extraLarge: 18px;
+    --font-size-xxLarge: 20px;
+
+    --font-size-answers-faqs: 15px;
+    
+    --font-style-light: 'gotham light', sans-serif;
+    --font-style-book: 'gotham book', sans-serif;
+    --font-style-medium: 'gotham medium', sans-serif;
+    --font-style-bold: 'gotham bold', sans-serif;
+    --font-style-black: 'gotham black', sans-serif;
+
+    --font-style-landing-1: 'raleway', sans-serif;
+    
+    --navbar-height: 4rem;
+    --navbar-font-size: 12px;
+    --navbar-font-family: var(--font-style-medium);
+    --navbar-color-hover: var(--color-web-1);
+    --navbar-color-portrait: #333333;
+    
+    --text-dark-color: #000000;
+    --text-dark-color-2: #101010;
+    --text-dark-color-3: rgb(58, 64, 91);
+    --text-gray-color: #858585;
+    --text-gray-color-2: #959595;
+    --text-light-color: white;
+
+    --color-borders-light-gray: rgb(226, 226, 226);
+    --transitions-icon-text-duration: 0.25s;
+    --homeCards-gap: 1rem;
+    --navBar-padding-right: var(--filterInputs-margin-left);
+    --buttons-pinkToBlack-hover: #111111;
+    --cart-table-borderColor: #ddd;
+    --padding-horizontal-seccions-portrait: 1rem;
+    --seccions-landscape-content-width: 55rem;
+    --table-bg-gray: rgb(250, 250 ,250);
+
+    /************************** Landing **********************/
+
+    --landing-color-1: #FF2B48;
+    --landing-color-2: #C3EAF1;
+    --landing-color-3: #3db0f5;
+    --landing-color-4: #3db0f5;
+    --landing-color-5: #0DFF80;
+    --landing-color-6: #88715C;
+    --landing-color-7: #39D077;
+    --landing-color-8: #524949;
+    --landig-bg-color: #F4F4F4;
+
+    --landing-font-familiy-1: "Playfair Display", serif;
+    --landing-shadows: 10px 17px 40px 0px rgba(168, 172, 185, 0.62);
+    --newPage-grayBg: #F9F9F9;
+}
+
+/****************************************************************************/
+
+@media only screen and (orientation: portrait) {
+    :root {
+        --homeCards-gap: 0.5rem;
+    }
+}
+
+/*************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.2;
+    font-weight: 300;
+    list-style: none;
+    font-size: var(--font-size-normal);
+    font-family: var(--font-style-book);
+    color: var(--text-dark-color-2);
+    text-align: center;
+}
+
+body {
+    position: relative;
+    overflow-y: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.mb025 {
+    margin-bottom: 0.25rem;
+}
+
+.mb050 {
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (orientation: landscape) {
+    html {
+        font-size: calc(1vh + 16px);
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    html {
+        font-size: calc(1vw + 16px);
+    }
+}

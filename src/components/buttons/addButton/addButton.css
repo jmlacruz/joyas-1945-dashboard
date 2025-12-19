@@ -1,0 +1,72 @@
+.addButtonCont {
+    position: relative;
+    --productDetails-buttonsCont-height: 1.75rem;
+    height: var(--productDetails-buttonsCont-height);
+    border-radius: calc(var(--productDetails-buttonsCont-height) / 2);
+    border: 2px solid #ccc;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+    transition-property: border-color;
+    width: 6rem;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.addButtonCont:hover {
+    border-color: var(--color-web-1);
+}
+
+.addButton_quantity {
+    width: 60%;
+    height: 100%;
+    border-style: none;
+    text-align: center;
+    font-family: var(--font-style-medium);
+    font-size: var(--font-size-large);
+}
+
+.addButton_quantity:focus {
+    outline: none;
+}
+
+.addButton_control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30%;
+    height: 100%;
+    font-size: 18px;
+    color: var(--text-gray-color);
+    cursor: pointer;
+}
+
+.addButton_control_sus {
+    left: 0;
+    user-select: none;
+}
+
+.addButton_control_sus:hover {
+    color: var(--text-dark-color);
+}
+
+.addButton_control_add {
+    right: 0;
+    user-select: none;
+}
+
+.addButton_control_add:hover {
+    color: var(--text-dark-color);
+}
+
+.productDetails_addToCartButton {
+    height: var(--productDetails-buttonsCont-height);
+    border-radius: calc(var(--productDetails-buttonsCont-height) / 2);
+    background-color: var(--color-web-1);
+    padding: 0 2rem;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+    transition-property: background-color;
+    cursor: pointer;
+}

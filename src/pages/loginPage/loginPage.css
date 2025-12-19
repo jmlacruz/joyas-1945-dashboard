@@ -1,0 +1,6 @@
+.loginPageCont {
+    margin-top: var(--navbar-height);
+    height: fit-content;
+    --login-width: 25rem;
+    --login-height: 25rem;
+}

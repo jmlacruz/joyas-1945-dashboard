@@ -1,0 +1,32 @@
+.landingNavBar_contMenu {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    box-shadow: unset;
+}
+
+.landingNavBar_opcion  {
+    padding-left: 0.40rem;
+    padding-right: 0.40rem;
+    letter-spacing: 0;
+    font-family: var(--font-style-book);
+}
+
+.landingNavBar_navBarNetWorkIcons {
+    margin-left: 0.40rem;
+    margin-right: 0.40rem;
+}
+
+.landingNavBar_navBarContLogo {
+    height: 80%;
+    margin-right: 0;
+}
+
+.landingNavBar_buttonsCont button {
+    padding: 0;
+    background-color: unset;
+}
+
+.landingNavBar_buttonsCont button:last-child {
+    margin-left: 20px;
+}

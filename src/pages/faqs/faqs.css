@@ -1,0 +1,114 @@
+.faqs_pageContainer {
+    align-items: flex-start;
+    position: relative;
+}
+
+.faqs_container {
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50rem;
+    max-width: 100%;
+}
+
+.faqs_seccions {
+    align-items: flex-start;
+    width: 100%;
+}
+
+.faqs_seccion {
+    width: 100%;
+}
+
+.faqs_index {
+    margin: 2.5rem 0;
+}
+
+.faqs_index span {
+    font-style: italic;
+    color: var(--text-gray-color);
+}
+
+.faqs_secondaryTitle {
+    font-size: var(--font-size-small);
+    color: var(--text-gray-color);
+}
+
+.faqs_mainTitle {
+    font-size: 1.7rem;
+    font-family: var(--font-style-bold);
+    border-bottom: 1px solid var(--color-borders-light-gray);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    text-align: left;
+}
+
+.faqs_seccion_question {
+    padding: 1.25rem 0;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid var(--color-borders-light-gray);
+    cursor: pointer;
+}
+
+.faqs_seccion_question:hover p:first-child {
+    color: #03B5DB;
+}
+
+.faqs_seccion_question:hover img:nth-child(2) {
+    filter: brightness(100%);
+}
+
+.faqs_seccion_question p {
+    font-family: var(--font-style-medium);
+    font-size: var(--font-size-small);
+    text-align: left;
+    pointer-events: none;
+    text-transform: uppercase;
+}
+
+.faqs_questionIcon {
+    height: 1rem;
+    aspect-ratio: 1/1;
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+.faqs_question_active {
+    color: #03B5DB;
+}
+
+.faqs_seccion_answer {
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition-property: max-height;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    display: block;
+}
+
+.faqs_answerActive {
+    border-bottom: 1px solid var(--color-borders-light-gray); 
+}
+
+.faqs_seccion_answer p {
+    font-size: var(--font-size-answers-faqs);
+    text-align: left;
+    color: var(--text-gray-color);
+    pointer-events: none;
+    margin: 1.25rem 0;
+    white-space: pre-line;
+    line-height: 1.5;
+}
+
+.faqs_InfoText {
+    margin: 2rem 0;
+    margin-bottom: 3rem;
+    font-size: var(--font-size-extraLarge);
+    font-style: italic;
+    color: var(--text-gray-color);
+    text-align: left;
+}

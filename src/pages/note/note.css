@@ -1,0 +1,209 @@
+.note_pageContainer {
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+}
+
+.note_topImage {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.note_indexCont {
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    width: 100%;
+}
+
+.note_index {
+    width: 50rem;
+    max-width: 100%;
+    text-align: left;
+}
+
+.note_index span {
+   font-style: italic;
+}
+
+.note_container {
+    margin: 3rem 0;
+}
+
+.note_contentCont, .note_head {
+    width: 35rem;
+    max-width: 100%;
+    align-items: flex-start;
+}
+
+.note_contentCont li {
+    list-style: initial;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+
+.note_contentCont * {
+    text-align: left;
+    line-height: 1.5;
+}
+
+.note_title {
+   font-size: 2.5rem;
+   font-family: var(--font-style-bold);
+   line-height: 1.1;
+   margin-bottom: 1.5rem;
+   text-align: left;
+}
+
+.note_contentCont img {
+    width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    object-position: left;
+}
+
+.note_contentCont p {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.75rem;
+}
+
+.note_contentCont p, .note_contentCont strong, .note_contentCont span, .note_contentCont li{
+    font-size: var(--font-size-large);
+    color: var(--text-gray-color);
+}
+
+.note_contentCont li {
+    margin-left: 1.5rem;
+}
+
+.note_contentCont strong {
+    font-family: var(--font-style-black);
+}
+
+p.note_date {
+    margin-bottom: 1.25rem;
+    font-size: var(--font-size-small);
+    color: var(--text-dark-color);
+}
+
+p.note_back {
+    font-size: var(--font-size-xs);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.note_otherNotesCont {
+    width: 100%;
+    height: 18rem;
+    background-color: var(--bg-color-1);
+}
+
+.note_prevNote, .note_nextNote  {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem;
+    padding-top: 3.5rem;
+    cursor: pointer;
+}
+
+.note_otherNote * {
+    z-index: 20;
+    text-align: left;
+}
+
+.note_otherNotesImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 5;
+}
+
+.note_otherNotesBgFilter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--hover-green-color);
+    opacity: 0.90;
+    z-index: 10;
+    transition-property: opacity;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+}
+
+.note_otherNote:hover .note_otherNotesBgFilter {
+    opacity: 0.75;
+}
+
+.note_otherNotesBgFilterNext {
+    background-color: #ff3b59;
+}
+
+.note_otherNotesTitle {
+    font-size: 1.5rem;
+    transition-property: color;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+}
+
+.note_otherNote:hover .note_otherNotesTitle {
+    color: var(--text-light-color);
+}
+
+.note_otherNotesIntro {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+/********************************************************************/
+
+@media only screen and (orientation: portrait) {
+
+    .note_indexCont {
+        left: calc(var(--padding-horizontal-seccions-portrait) + 0.5rem);
+        top: 1rem;
+        max-width: calc(100% - 2 * var(--padding-horizontal-seccions-portrait) - 0.5rem);
+    }
+    
+    .note_index {
+        width: 100%;
+    }
+
+    .note_otherNotesCont {
+        flex-direction: column;
+    }
+
+    .note_prevNote, .note_nextNote  {
+        width: 100%;
+        height: 50%;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column-reverse;
+    }
+
+    .note_prevNote *, .note_nextNote * {
+        text-align: center;
+    }
+
+    .note_otherNotesIntro {
+        display: none;
+    }
+
+    .note_contentCont img {
+        width: 100%;
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,233 @@
+.pagesContainer {
+    margin-top: var(--navbar-height);
+    /* height: calc(100vh - var(--navbar-height)); */
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+.customButton1 {
+    height: 1.35rem;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--color-borders-light-gray);
+    text-transform: uppercase;
+    padding: 0 0.5rem;
+    font-size: var(--navbar-font-size);
+    font-family: var(--navbar-font-family);
+    background-color: var(--bg-white);
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-property: border-color border-width;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+    line-height: 1;
+    width: max-content;
+    min-width: 6rem;
+}
+
+.customButton1:hover {
+    border-color: black;
+}
+
+/******************************************** Genéricos ********************************************/
+
+.displayNone {
+    display: none;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.opacity0 {
+    opacity: 0;
+}
+
+.opacity1 {
+    opacity: 1;
+}
+
+/******************************************** Animaciones ********************************************/
+
+/************ Transición Texto *************/
+
+.opcionHoverPinkTransition {
+    transition-property: color;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+}
+
+.opcionHoverPinkTransition:hover {
+    color: var(--color-web-1);
+}
+
+.opcionHoverBlueTransition {
+    transition-property: color;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+}
+
+.opcionHoverBlueTransition:hover {
+    color: var(--landing-color-4);
+}
+
+/************ Transición iconos *************/
+
+.iconHoverBlackToPinkTransition,
+.iconHoverWhiteToPinkTransition,
+.iconHoverGrayToPinkTransition {
+    transition-property: filter;
+    transition-duration: var(--transitions-icon-text-duration);
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+.iconHoverBlackToPinkTransition {
+    filter: brightness(0);
+}
+
+.iconHoverWhiteToPinkTransition {
+    filter: brightness(500%);
+}
+
+.iconHoverGrayToPinkTransition {
+    filter: brightness(100%) grayscale(100%);
+}
+
+.iconHoverBlackToPinkTransition:hover,
+.iconHoverWhiteToPinkTransition:hover,
+.iconHoverGrayToPinkTransition:hover {
+    filter: brightness(100%) grayscale(0);
+}
+
+/************ Animación de opacidad *************/
+
+.opacityOnAnimation,
+.opacityOffAnimation {
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.opacityOnAnimation {
+    animation-name: opacityOnAnimation;
+    animation-duration: 0.5s;
+}
+
+.opacityOffAnimation {
+    animation-name: opacityOffAnimation;
+    animation-duration: 0.25s;
+}
+
+@keyframes opacityOnAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacityOffAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/****************************************************************/
+
+.elementToShow {
+    /* Clase para que no se vea la estructura de una página cuando se está leyndo la base de datos al entrar */
+    opacity: 0;
+}
+
+/****************************************************************/
+
+.paddingHorizontalPages {
+    padding-right: var(--padding-horizontal-seccions-portrait);
+    padding-left: var(--padding-horizontal-seccions-portrait);
+}
+
+/******************* Aniación de dropdowns *********************/
+
+.dropDownAnimation1_in {
+    animation-name: dropDownAnimation1_in;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes dropDownAnimation1_in {
+    0% {
+        transform: translateY(0.5rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/************************************* Sweet Alert ***********************************/
+
+.sweetTitleWithOptions {
+    font-size: 1.5rem;
+}
+
+.sweetCancelButtonWithOptions {
+    background-color: var(--color-web-1) !important;
+}
+
+.sweetConfirmBoton,
+.swal2-confirm {
+    background-color: var(--color-web-1) !important;
+    /* Boton OK */
+}
+
+.sweetConfirmButtonWithOptions {
+    background-color: var(--color-web-1) !important;
+    /* Boton OK del popup con opciones*/
+}
+
+.swal2-html-container {
+    font-size: 1.4rem !important;
+    /* Texto popups */
+}
+
+.swal2-container {
+    z-index: 9500 !important;
+    /* Para que el spinner no tape el popup */
+}
+
+.swal2-icon-content {
+    /* Para que el texto dentro del icono redondo sea del mismo color que el circulo del icono */
+    color: inherit;
+    font-size: 2.5rem !important;
+}
+
+.swal2-shown {
+    /* Para que no desaparezca el scroll cuando aparace el popup de sweetalert2"*/
+    overflow: auto;
+}
+
+.swal2-title {
+    font-size: 1.25rem;
+    /* Titulo */
+}
+
+.swal2-html-container {
+    /* Subtitulo */
+    font-size: 1rem !important;
+}
+
+.swal2-popup {
+    /* Contenedor */
+    width: 25rem;
+    max-width: 100%;
+}

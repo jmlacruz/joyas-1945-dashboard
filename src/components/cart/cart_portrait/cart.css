@@ -1,0 +1,241 @@
+.cartPageContainer_portrait {
+   padding: 0 var(--padding-horizontal-seccions-portrait);
+}
+
+.cart-table_portrait {
+    margin-bottom: 1rem;
+}
+
+.cart-container_ortrait {
+    margin-bottom: 0;
+}
+
+.cartTablePortrait_aditionalRows {
+    padding: 0.5rem 0;
+}
+
+.cartTablePortrait_priceCont {
+    justify-content: flex-end;
+    align-items: baseline;
+    font-family: var(--font-style-medium);
+}
+
+.cartTablePortrait_priceCont span {
+    font-size: var(--font-size-extraLarge);
+    font-family: var(--font-style-bold);
+}
+
+.cartTablePortrait_priceCont span.sign {
+    font-size: var(--font-size-small);
+    font-family: var(--font-style-bold);
+    padding-left: 0.2rem;
+    transform: translateY(-25%);
+}
+
+.cartTablePortrait_priceCont span.sign:first-child {
+    font-size: var(--font-size-small);
+    font-family: var(--font-style-normal);
+    padding-left: 0.2rem;
+    transform: translateY(-15%);
+}
+
+.cartTablePortrait_editCont {
+    cursor: pointer;
+}
+
+.cartTablePortrait_editIcon {
+    height: 1.25rem;
+    margin-top: 0.25rem;
+}
+
+.cartTablePortrait_observation_buttons_cont {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cart-tablePortrait_productImg {
+    width: 6rem;
+    aspect-ratio: 1/1;
+    height: unset;
+    object-fit: contain;
+}
+
+.cartPagePortrait_select {
+    width: 100%;
+}
+
+.cartPortrait_fiscalDataInputsCont {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.cartPagePortrait_finalizePurchaseButton {
+    width: 100%;
+}
+
+.cartTablePortrait_buttonCont {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.cartTablePortrait_button {
+    width: 100%;
+    height: 2rem;
+    border-radius: 1rem;
+}
+
+.cartPortrait_noteCont {
+    width: 100%;
+    border: 1px solid var(--color-borders-light-gray);
+    margin-bottom: 1.5rem;
+    background-color: var(--table-bg-gray);
+}
+
+.cartPortrait_note {
+    border-bottom: 1px solid var(--color-borders-light-gray);
+    padding: 1rem 0.5rem;
+    height: unset;
+}
+
+.cartPortrait_noteButton {
+    width: max-content;
+    padding: 0 0.5rem;
+    max-width: 70%;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    background-color: var(--table-bg-gray);
+}
+
+.cartPortrait_total {
+    height: 6rem;
+}
+
+.cartPortrait_total {
+    align-items: flex-end;
+    padding-right: 3rem;
+}
+
+.cartPortrait_totalText{
+    font-family: var(--font-style-bold);
+    margin-bottom: 0.75rem;
+}
+
+.cartPortrait_totalNumber{
+    font-family: var(--font-style-bold);
+    font-size: var(--font-size-xxLarge);
+    color: var(--color-web-1);
+}
+
+.cartPortrait_totalRates{
+    color: var(--text-gray-color-2);
+    font-size: var(--font-size-small);
+}
+
+.cartTable2_discount2 {
+    margin-left: 0;
+}
+
+.cartTable2_pricesSeparator {
+    margin: 0 0.25rem;
+}
+
+.cartTable2_prices_finalText {
+    margin-top: 0.75rem;
+    text-align: right;
+}
+
+.cartTable_totalPortrait {
+    padding-right: 0;
+}
+
+/*******************************************/
+
+.cart-table_portrait_finalDetails tr td:first-child {
+    width: 35%;
+}
+
+.cart-table_portrait_finalDetails tr td:nth-child(2) {
+    width: 65%;
+    font-family: var(--font-style-bold);
+}
+
+.cartTablePortrait_prices {
+    font-size: var(--font-size-large);
+    font-family: var(--font-style-bold);
+}
+
+@media only screen and (orientation: portrait) {
+
+    .cartContainer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cartTable_button {
+        margin-bottom: 0;
+        width: 6rem;
+        max-width: 45%;
+        height: 1.75rem;
+    }
+    
+    .cart-table th,
+    .cart-table td {
+        padding: 1rem 0.5rem;
+    }
+
+    .cartTable_generalObservation_textArea {
+        height: 7rem;
+    }
+
+    .cartTable_fiscalDataInputCont {
+        width: 47.5%;
+    }
+
+    .cartTable_buyerTypeCont_inputs {
+        font-size: var(--font-size-small);
+    }
+}
+
+@media only screen and (orientation: landscape) and (width < 1200px) {
+
+    .cartTablePortrait_observation_buttons_cont {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .cartTable_button {
+        margin-bottom: 0;
+        height: 1.75rem;
+    }
+
+    .cartPortrait_note {
+        height: unset;
+    }
+
+    .cartPortrait_noteButton {
+        width: max-content;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        max-width: 100%;
+    }
+
+    .cartTable_fiscalDataInputCont {
+        width: 47.5%;
+    }
+    
+}
+
+/* Estilos para el botón deshabilitado */
+.cartPage_finalizePurchaseButton.disabled {
+    background-color: var(--color-borders-light-gray);
+    color: var(--text-gray-color-2);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.cartPage_finalizePurchaseButton.disabled:hover {
+    background-color: var(--color-borders-light-gray);
+}

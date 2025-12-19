@@ -1,0 +1,208 @@
+.productCardCont {
+    position: relative;
+    --cardsByRow: 6;
+    --spaces-quanity: calc(var(--cardsByRow) + 1);                  
+    --spaces-total-width: calc(var(--spaces-quanity) * var(--homeCards-gap));       /* 1 REM de gap entre cards definido en el index.css */
+    --avaliableWidth: calc(100% - var(--spaces-total-width));
+    width: calc(var(--avaliableWidth) / var(--cardsByRow));
+    aspect-ratio: 11/17;
+    background-color: white;
+    justify-content: space-between;
+    cursor: pointer;
+    overflow: hidden;
+    --transition-duration: 0.8s;
+    --card-code-height: 10%;
+    --card-imgsCont-height: 70%;
+    --card-price_cloth_stock-height: 20%;
+}
+
+.productCardCode {
+    height: var(--card-code-height);
+}
+
+.productCardDescriptionCont {
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    padding: 0 0.5rem;
+    opacity: 0;
+    align-items: baseline;
+    transition-property: opacity;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: ease-out;
+}
+
+.productCardDescription {
+    text-transform: uppercase;
+    font-size: var(--font-size-normal);
+    text-align: right;
+    word-break: break-all;
+    height: var(--font-size-normal);
+    overflow: hidden;
+}
+
+.productCardDescriptionDots {
+    font-family: var(--font-style-bold);
+}
+
+.productCardCont:hover .productCard_CardQuantitySelect_Cont {
+    opacity: 1;
+}
+
+.productCardCont:hover .productCardDescriptionCont {
+    opacity: 1;
+}
+
+.productCardCont:hover .productCardCode {
+    opacity: 0;
+}
+
+.productCard_Price_Cloth_Stock_Container {
+    min-height: var(--card-price_cloth_stock-height);
+    width: 100%;
+    justify-content: space-between;
+}
+
+.productCardPrice {
+    font-family: var(--font-style-black);
+    font-size: 20px;
+    line-height: 1;
+}
+
+.productCardPriceSign {
+    font-family: var(--font-style-bold);
+    font-size: 15px;
+}
+
+.productCardCloth {
+    font-family: var(--font-style-black);
+    margin-right: 0.25rem;
+}
+
+.productCardStock {
+    font-family: var(--font-style-black);
+    color: var(--color-web-1);
+    margin-bottom: 0.25rem;
+}
+
+.productCardImgsCont {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    max-width: 85%;
+}
+
+.productCardImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.productCard_CardQuantitySelect_Cont {
+    height: 1.5rem;
+    width: 100%;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: ease-out;
+}
+
+.productCard_CardQuantitySelect_div {
+    width: 33.33333%;
+    height: 100%;
+}
+
+.productCard_CardQuantitySelect_divBlack {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    font-family: var(--font-style-medium);
+    transition-property: color;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: ease-out;
+}
+
+.productCard_CardQuantitySelect_divBlack:hover {
+    color: var(--color-web-1);
+}
+
+.productCard_quantityInCardCont {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    height: 1.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--hover-green-color);
+    z-index: 20;
+    color: var(--text-light-color);
+    font-family: var(--font-style-black);
+}
+
+.productCard_imgsIndexsCont {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    pointer-events: none;
+}
+
+.productCard_imgsIndex {
+    background-color: var(--text-gray-color);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    margin: 0 0.15rem;
+    transition-duration: 0.25s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
+.productCard_imgsIndexActive {
+    background-color: var(--color-web-1);
+    transform: scale(1.5);
+}
+
+/************************ responseive 2º sprint **************************/
+
+@media only screen and (orientation: portrait) {
+    .productCardCont {
+        --cardsByRow: 2;
+    }
+
+    .productCard_CardQuantitySelect_Cont {
+        opacity: 1;
+    }
+
+    .productCard_imgsIndexsCont {
+        display: none;
+    }
+}
+
+@media only screen and (orientation: landscape) and (width < 1200px) {
+    .productCardCont {
+        --cardsByRow: 4;
+    }
+
+    .homePageFinderSearchInput {
+        margin-left: 0;
+    }
+
+    .productCard_CardQuantitySelect_Cont {
+        opacity: 1;
+    }
+
+    .productCard_imgsIndexsCont {
+        display: none;
+    }
+}
