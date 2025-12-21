@@ -1,6 +1,6 @@
 import categoriesDb from '../mocks/db/categories.db';
-import rolesDb from '../mocks/db/roles.db';
 import projectsDb from '../mocks/db/projects.db';
+import rolesDb from '../mocks/db/roles.db';
 
 export const examplePages = {
 	examplesPage: {
@@ -24,12 +24,6 @@ export const appPages = {
 		text: 'AI',
 		icon: 'HeroRocketLaunch',
 		subPages: {
-			aiDashboardPage: {
-				id: 'aiDashboardPage',
-				to: '/ai/dashboard',
-				text: 'Inicio',
-				icon: 'HeroHome',
-			},
 			chatPages: {
 				id: 'customerPage',
 				to: '/ai/chat',
@@ -256,12 +250,6 @@ export const appPages = {
 						id: 'editPageLink',
 						to: '/crm/customer',
 					},
-					sellersListPage: {
-						id: 'sellersListPage',
-						to: `/crm/sellers/list`,
-						text: `Lista de vendedores`,
-						icon: 'HeroUser',
-					},
 					sellerEditPage: {
 						id: 'sellerEditPage',
 						to: `/crm/seller`,
@@ -456,12 +444,6 @@ export const appPages = {
 						id: 'notificationsLogsPage',
 						to: '/siteConfiguration/notificationsLogs',
 						text: 'Log de envíos"',
-						icon: 'HeroQueueList',
-					},
-					habDesLogsPage: {
-						id: 'habDesLogsPage',
-						to: '/siteConfiguration/habdesLogs',
-						text: 'Log de hab / des de autom."',
 						icon: 'HeroQueueList',
 					},
 				},

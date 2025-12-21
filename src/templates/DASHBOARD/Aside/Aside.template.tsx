@@ -173,11 +173,6 @@ const AsideTemplate = () => {
 							text='Logs de hab/des autom.'
 							icon='HeroPresentationChartBar'
 						/> */}
-						<NavItem
-							// to = '/ai/dashboard'
-							text='Listado de Notas'
-							icon='HeroSquare2Stack'
-						/>
 					</NavCollapse>
 
 					<NavSeparator />

@@ -1,9 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Aside, { AsideBody, AsideFooter, AsideHead } from '../../../components/layouts/Aside/Aside';
-import LogoAndAsideTogglePart from './_parts/LogoAndAsideToggle.part';
-import DarkModeSwitcherPart from './_parts/DarkModeSwitcher.part';
-import { appPages, componentsPages } from '../../../config/pages.config';
 import Nav, {
 	NavButton,
 	NavCollapse,
@@ -13,8 +10,11 @@ import Nav, {
 	NavUser,
 } from '../../../components/layouts/Navigation/Nav';
 import Badge from '../../../components/ui/Badge';
-import UserTemplate from '../User/User.template';
+import { appPages, componentsPages } from '../../../config/pages.config';
 import usersDb from '../../../mocks/db/users.db';
+import UserTemplate from '../User/User.template';
+import DarkModeSwitcherPart from './_parts/DarkModeSwitcher.part';
+import LogoAndAsideTogglePart from './_parts/LogoAndAsideToggle.part';
 
 const DefaultAsideTemplate = () => {
 	const navigate = useNavigate();
@@ -27,14 +27,6 @@ const DefaultAsideTemplate = () => {
 			<AsideBody>
 				<Nav>
 					<NavItem {...appPages.salesAppPages.subPages.salesDashboardPage} />
-					<NavItem {...appPages.aiAppPages.subPages.aiDashboardPage}>
-						<Badge
-							variant='outline'
-							color='amber'
-							className='border-transparent leading-none'>
-							NEW
-						</Badge>
-					</NavItem>
 					<NavItem {...appPages.crmAppPages.subPages.crmDashboardPage}>
 						<NavButton
 							title='New Customer'
@@ -87,7 +79,6 @@ const DefaultAsideTemplate = () => {
 						text={appPages.aiAppPages.text}
 						to={appPages.aiAppPages.to}
 						icon={appPages.aiAppPages.icon}>
-						<NavItem {...appPages.aiAppPages.subPages.aiDashboardPage} />
 						<NavCollapse
 							text={appPages.aiAppPages.subPages.chatPages.text}
 							to={appPages.aiAppPages.subPages.chatPages.to}

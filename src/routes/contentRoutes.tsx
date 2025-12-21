@@ -12,7 +12,6 @@ import ReviewPage from '../pages/crm/customer/ReviewPage/Review.page';
 import ReviewsListPage from '../pages/crm/customer/ReviewsListPage/ReviewsList.page';
 import SellerNewPage from '../pages/crm/customer/SellerNewPage/SellerNew.page';
 import SellerPage from '../pages/crm/customer/SellerPage/Seller.page';
-import SellersListPage from '../pages/crm/customer/SellersListPage/SellersList.page';
 import UsersLogsPage from '../pages/crm/customer/UsersLogsPage/UsersLogs.page';
 import InProcessOrdersListPage from '../pages/orders/InProcessOrdersListPage/InProcessOrdersListPage';
 import OrderPage from '../pages/orders/OrderPage/Order.page';
@@ -38,7 +37,6 @@ import ProductJoyasListPage from '../pages/sales/products/ProductListPage/Produc
 import ProductsOrderPage from '../pages/sales/products/ProductsOrder/ProductsOrder.page';
 import FaqPage from '../pages/siteConfiguration/Faq/Faq';
 import FaqsListPage from '../pages/siteConfiguration/FaqsList/FaqsList.page';
-import HabDesAutomLogsPage from '../pages/siteConfiguration/HabDesAutomLogsPage/HabDesAutomLogsPage';
 import NewFaqPage from '../pages/siteConfiguration/NewFaq/NewFaq';
 import NotificationsLogsPage from '../pages/siteConfiguration/NotificationsLogsPage/NotificationsLogs.page';
 import ReportListPage from '../pages/siteConfiguration/Report/ReportList.page';
@@ -311,10 +309,6 @@ const contentRoutes: RouteProps[] = [
 		element: <CustomerPage />,
 	},
 	{
-		path: appPages.crmAppPages.subPages.customerPage.subPages.sellersListPage.to,
-		element: <SellersListPage />,
-	},
-	{
 		path: `${appPages.crmAppPages.subPages.customerPage.subPages.sellerEditPage.to}/:id`,
 		element: <SellerPage />,
 	},
@@ -393,11 +387,6 @@ const contentRoutes: RouteProps[] = [
 			.notificationsLogsPage.to,
 		element: <NotificationsLogsPage />,
 	},
-	{
-		path: appPages.siteConfigurationAppPages.subPages.siteConfigurationPage.subPages
-			.habDesLogsPage.to,
-		element: <HabDesAutomLogsPage />,
-	},
 
 	/**
 	 * CRM::END
@@ -459,10 +448,6 @@ const contentRoutes: RouteProps[] = [
 	/**
 	 * AI::BEGIN
 	 */
-	{
-		path: appPages.aiAppPages.subPages.aiDashboardPage.to,
-		element: <AiDashboardPage />,
-	},
 	{
 		path: appPages.aiAppPages.subPages.chatPages.subPages.photoPage.to,
 		element: <ChatPhotoPage />,

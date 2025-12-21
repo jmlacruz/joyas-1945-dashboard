@@ -1,17 +1,14 @@
+import classNames from 'classnames';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import Subheader, {
-	SubheaderLeft,
-	SubheaderRight,
-} from '../../../components/layouts/Subheader/Subheader';
-import Tooltip from '../../../components/ui/Tooltip';
 import Icon from '../../../components/icon/Icon';
+import Subheader, { SubheaderLeft } from '../../../components/layouts/Subheader/Subheader';
 import Button from '../../../components/ui/Button';
-import { appPages } from '../../../config/pages.config';
-import { TIcons } from '../../../types/icons.type';
-import { TColors } from '../../../types/colors.type';
 import OffCanvas, { OffCanvasBody, OffCanvasHeader } from '../../../components/ui/OffCanvas';
+import Tooltip from '../../../components/ui/Tooltip';
+import { appPages } from '../../../config/pages.config';
+import { TColors } from '../../../types/colors.type';
+import { TIcons } from '../../../types/icons.type';
 
 type TAiType = {
 	icon: TIcons;
@@ -161,13 +158,6 @@ const AiSubheaderPartial = () => {
 					</OffCanvasBody>
 				</OffCanvas>
 			</SubheaderLeft>
-			<SubheaderRight>
-				<Link to={`../${appPages.aiAppPages.subPages.aiDashboardPage.to}`}>
-					<Button variant='solid' icon='HeroPlus'>
-						New Chat
-					</Button>
-				</Link>
-			</SubheaderRight>
 		</Subheader>
 	);
 };
