@@ -1,40 +1,40 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { useFormik, FormikProps } from 'formik';
 import classNames from 'classnames';
-import PageWrapper from '../../../../components/layouts/PageWrapper/PageWrapper';
+import { FormikProps, useFormik } from 'formik';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import Checkbox from '../../../../components/form/Checkbox';
+import Input from '../../../../components/form/Input';
+import Label from '../../../../components/form/Label';
 import Container from '../../../../components/layouts/Container/Container';
+import PageWrapper from '../../../../components/layouts/PageWrapper/PageWrapper';
+import Subheader, {
+	SubheaderLeft,
+	SubheaderRight,
+	SubheaderSeparator,
+} from '../../../../components/layouts/Subheader/Subheader';
+import Badge from '../../../../components/ui/Badge';
+import Button from '../../../../components/ui/Button';
 import Card, {
 	CardBody,
 	CardHeader,
 	CardHeaderChild,
 	CardTitle,
 } from '../../../../components/ui/Card';
-import Subheader, {
-	SubheaderLeft,
-	SubheaderRight,
-	SubheaderSeparator,
-} from '../../../../components/layouts/Subheader/Subheader';
 import { appPages } from '../../../../config/pages.config';
-import Button from '../../../../components/ui/Button';
-import Label from '../../../../components/form/Label';
-import Input from '../../../../components/form/Input';
-import Checkbox from '../../../../components/form/Checkbox';
-import Badge from '../../../../components/ui/Badge';
 import useSaveBtn from '../../../../hooks/useSaveBtn';
 
-import { BrandDocumentsInfo, BrandImagesInfo, DocumentsInfoOfBrand, ImagesInfoOfBrand, Marca } from '../../../../types/DASHBOARD/database';
-import { getTable, updateTable } from '../../../../services/database';
-import { showModal1 } from '../../../../features/modalSlice';
-import { brandRequiredFields } from '../../../../data';
-import { fileToBase64, isFormChanged } from '../../../../utils/utils';
-import { SpinnerContext } from '../../../../context/spinnerContext';
+import Button1 from '../../../../components/DASHBOARD/ui/button1/Button1';
 import WaitImages from '../../../../components/DASHBOARD/waitImages/WaitImages';
 import Icon from '../../../../components/icon/Icon';
 import themeConfig from '../../../../config/theme.config';
-import Button1 from '../../../../components/DASHBOARD/ui/button1/Button1';
+import { SpinnerContext } from '../../../../context/spinnerContext';
+import { brandRequiredFields } from '../../../../data';
+import { showModal1 } from '../../../../features/modalSlice';
+import { getTable, updateTable } from '../../../../services/database';
 import { deleteDocument, deleteFiles, uploadDocument, uploadFiles } from '../../../../services/firebase';
+import { BrandDocumentsInfo, BrandImagesInfo, DocumentsInfoOfBrand, ImagesInfoOfBrand, Marca } from '../../../../types/DASHBOARD/database';
+import { fileToBase64, isFormChanged } from '../../../../utils/utils';
 
 const BrandPage = () => {
 	const { id } = useParams();
@@ -167,7 +167,7 @@ const BrandPage = () => {
 						values.logo = `firebase/${response.data[1]}`;
 					}
 				}else if (!response.success) {
-					dispatch(showModal1({ show: true, info: { icon: "error", title: "No se pudieron subr las imágenes", subtitle: response.message } }));
+					dispatch(showModal1({ show: true, info: { icon: "error", title: "No se pudieron subir las imágenes", subtitle: response.message } }));
 					showSpinner(false);
 					return;
 				}

@@ -250,7 +250,7 @@ const ProductJoyasNewpage = () => {
 							show: true,
 							info: {
 								icon: 'error',
-								title: 'No se pudieron subr las imágenes',
+								title: 'No se pudieron subir las imágenes',
 								subtitle: response.message,
 							},
 						}),
