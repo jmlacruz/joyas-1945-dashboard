@@ -389,7 +389,8 @@ const ProductJoyasListPage = () => {
 					return {
 						...product,
 						marca: currentBrand?.descripcion || product.marca,
-						categoria: currentCategory?.nombre || product.categoria,
+						categoriaNombre: currentCategory?.nombre || '',
+						// Keep categoria as the original ID for filtering purposes
 					};
 				});
 				const orderedProductsData = sortProductsByOrder(productsDataWithBrandAndCategory);
@@ -688,7 +689,7 @@ const ProductJoyasListPage = () => {
 				footer: 'Orden',
 				id: 'order',
 			}),
-			columnHelper.accessor('categoria', {
+			columnHelper.accessor((row) => (row as any).categoriaNombre || row.categoria, {
 				cell: (info) => <span>{info.getValue()}</span>,
 				header: 'Categoría',
 				footer: 'Categoría',
@@ -1030,15 +1031,6 @@ const ProductJoyasListPage = () => {
 							name='new'
 							onChange={handleFilterCheckChange}
 							checked={filter.new === true}
-							className='productsListInputOrSelect_checkBox !py-0'
-						/>
-					</div>
-					<div className='productsListInputOrSelect_checkBox_cont'>
-						<Label htmlFor='inOrders'>En pedidos</Label>
-						<Checkbox
-							name='inOrders'
-							onChange={handleFilterCheckChange}
-							checked={filter.inOrders === true}
 							className='productsListInputOrSelect_checkBox !py-0'
 						/>
 					</div>

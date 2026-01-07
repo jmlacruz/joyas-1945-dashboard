@@ -7,7 +7,6 @@
 @tailwind utilities;
 
 @layer base {
-	
 	:root {
 		--header-height: 0px;
 		--subheader-height: 0px;
@@ -15,7 +14,7 @@
 
 	html,
 	body {
-		@apply flex h-full flex-col scroll-smooth bg-zinc-100 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200;
+		@apply flex h-full flex-col scroll-smooth bg-zinc-100 text-lg text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
 	}
 
 	html.dark {
@@ -27,22 +26,22 @@
 	}
 
 	h1 {
-		@apply text-4xl text-black dark:text-white;
+		@apply text-4xl text-zinc-900 dark:text-zinc-100;
 	}
 	h2 {
-		@apply text-3xl text-black dark:text-white;
+		@apply text-3xl text-zinc-900 dark:text-zinc-100;
 	}
 	h3 {
-		@apply text-2xl text-black dark:text-white;
+		@apply text-2xl text-zinc-900 dark:text-zinc-100;
 	}
 	h4 {
-		@apply text-xl text-black dark:text-white;
+		@apply text-xl text-zinc-900 dark:text-zinc-100;
 	}
 	h5 {
-		@apply text-lg text-black dark:text-white;
+		@apply text-lg text-zinc-900 dark:text-zinc-100;
 	}
 	h6 {
-		@apply text-base text-black dark:text-white;
+		@apply text-base text-zinc-900 dark:text-zinc-100;
 	}
 	p {
 		@apply mb-2;
