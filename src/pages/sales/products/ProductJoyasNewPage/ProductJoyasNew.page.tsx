@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Checkbox from '../../../../components/form/Checkbox';
 import Input from '../../../../components/form/Input';
 import Label from '../../../../components/form/Label';
 import Radio, { RadioGroup } from '../../../../components/form/Radio';
@@ -72,7 +73,13 @@ const formikInitialValues: Partial<Producto> = {
 	foto2: '',
 	precioCalculado: 0,
 	order: 1,
+	con_descuento: false,
+	porcentaje_descuento: 0,
+	precio_full: undefined,
 };
+
+// Opciones de porcentaje de descuento (5, 10, 15... 100)
+const discountPercentageOptions = Array.from({ length: 20 }, (_, i) => (i + 1) * 5);
 
 const ProductJoyasNewpage = () => {
 	const { showSpinner } = useContext(SpinnerContext);
@@ -589,8 +596,77 @@ const ProductJoyasNewpage = () => {
 												/>
 											</div>
 											<div className='col-span-12 lg:col-span-6'>
+												<Label htmlFor='con_descuento'>
+													¿Con descuento?
+												</Label>
+												<Checkbox
+													id='con_descuento'
+													name='con_descuento'
+													variant='switch'
+													checked={formik.values.con_descuento}
+													onChange={(e) => {
+														formik.setFieldValue('con_descuento', e.target.checked);
+														if (!e.target.checked) {
+															formik.setFieldValue('porcentaje_descuento', 0);
+															formik.setFieldValue('precio_full', undefined);
+														}
+													}}
+													label={formik.values.con_descuento ? 'Sí' : 'No'}
+												/>
+											</div>
+											{formik.values.con_descuento && (
+												<>
+													<div className='col-span-12 lg:col-span-6'>
+														<Label htmlFor='porcentaje_descuento'>
+															Porcentaje de descuento
+															<span className='requiredFieldSymbol'>*</span>
+														</Label>
+														<Select
+															id='porcentaje_descuento'
+															name='porcentaje_descuento'
+															value={formik.values.porcentaje_descuento}
+															onChange={(e) => {
+																const porcentaje = Number(e.target.value);
+																formik.setFieldValue('porcentaje_descuento', porcentaje);
+																if (formik.values.precio_full && porcentaje > 0) {
+																	const precioConDescuento = formik.values.precio_full - (formik.values.precio_full * porcentaje / 100);
+																	formik.setFieldValue('precio', Math.round(precioConDescuento * 100) / 100);
+																}
+															}}>
+															<option value={0}>Seleccionar porcentaje</option>
+															{discountPercentageOptions.map((percent) => (
+																<option key={percent} value={percent}>
+																	{percent}%
+																</option>
+															))}
+														</Select>
+													</div>
+													<div className='col-span-12 lg:col-span-6'>
+														<Label htmlFor='precio_full'>
+															Precio Full
+															<span className='requiredFieldSymbol'>*</span>
+														</Label>
+														<Input
+															type='number'
+															id='precio_full'
+															name='precio_full'
+															value={formik.values.precio_full ?? ''}
+															onChange={(e) => {
+																const { value } = e.target;
+																const precioFull = value === '' ? undefined : Number(value);
+																formik.setFieldValue('precio_full', precioFull);
+																if (formik.values.porcentaje_descuento && precioFull && precioFull > 0) {
+																	const precioConDescuento = precioFull - (precioFull * (formik.values.porcentaje_descuento || 0) / 100);
+																	formik.setFieldValue('precio', Math.round(precioConDescuento * 100) / 100);
+																}
+															}}
+														/>
+													</div>
+												</>
+											)}
+											<div className='col-span-12 lg:col-span-6'>
 												<Label htmlFor='precio'>
-													Precio
+													{formik.values.con_descuento ? 'Precio con Descuento' : 'Precio'}
 													<span className='requiredFieldSymbol'>*</span>
 												</Label>
 												<Input
@@ -599,6 +675,8 @@ const ProductJoyasNewpage = () => {
 													name='precio'
 													onChange={formik.handleChange}
 													value={formik.values.precio}
+													readOnly={formik.values.con_descuento}
+													className={formik.values.con_descuento ? 'bg-zinc-100 dark:bg-zinc-800 cursor-not-allowed' : ''}
 												/>
 											</div>
 

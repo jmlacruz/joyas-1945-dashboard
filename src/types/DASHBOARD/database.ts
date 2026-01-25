@@ -165,14 +165,14 @@ export type Producto = {
 	order: number;
 	id_grupo: number;
 	notificado: '0' | '1';
-
-	// destacado: boolean;
-
+	con_descuento: boolean;
+	porcentaje_descuento: number;
+	precio_full: number;
 	thumbnail1: string; //Campos agregados por la API
 	thumbnail2: string;
 	foto1NameToDelete: string;
 	foto2NameToDelete: string;
-	// precioDolar: number,
+	precioDolar: number;
 };
 
 export type Marca = {

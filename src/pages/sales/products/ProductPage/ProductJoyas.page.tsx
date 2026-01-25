@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import Checkbox from '../../../../components/form/Checkbox';
 import Input from '../../../../components/form/Input';
 import Label from '../../../../components/form/Label';
 import Radio, { RadioGroup } from '../../../../components/form/Radio';
@@ -70,7 +71,13 @@ const formikInitialValues: Partial<Producto> = {
 	order: 0, //"marca" viene de la base como número (id de la marca) y despues se pasa a string (Nombre de la marca)
 	id_grupo: 0,
 	precio: 0,
+	con_descuento: false,
+	porcentaje_descuento: 0,
+	precio_full: undefined,
 };
+
+// Opciones de porcentaje de descuento (5, 10, 15... 100)
+const discountPercentageOptions = Array.from({ length: 20 }, (_, i) => (i + 1) * 5);
 
 const ProductPage = () => {
 	const { id } = useParams();
@@ -190,6 +197,7 @@ const ProductPage = () => {
 
 			delete values.thumbnail1; //Los campos thumbnail1, thumbnail2 y precioDolar son generados por la API (no se devuelven)
 			delete values.thumbnail2;
+			delete values.precioDolar;
 
 			if (typeof values.categoria === 'string') values.categoria = parseInt(values.categoria); //Los campos "categoria" y "marca" formik los pasa a string si se modifican
 			if (typeof values.marca === 'string') values.marca = parseInt(values.marca); // por estar en inputs tipo select o checkbox. Si estan en string los pasamos a número
@@ -453,6 +461,9 @@ const ProductPage = () => {
 			'precio',
 			'estado',
 			'id_grupo',
+			'con_descuento',
+			'porcentaje_descuento',
+			'precio_full',
 		];
 		(async () => {
 			await setClothsInfo(); //Añadimos datos de paños
@@ -520,7 +531,15 @@ const ProductPage = () => {
 
 				productData.descripcion = productData.descripcion?.trim(); //Algunos productos vienen con espacios vacios en la descripción y al clickear, el cursor aparece en cualquier lugar
 
-				formik.setValues(productData);
+				// Aseguramos que los campos de descuento tengan valores por defecto si vienen null/undefined
+				if (productData.con_descuento === null || productData.con_descuento === undefined) {
+					productData.con_descuento = false;
+				}
+				if (productData.porcentaje_descuento === null || productData.porcentaje_descuento === undefined) {
+					productData.porcentaje_descuento = 0;
+				}
+
+				formik.setValues({ ...formikInitialValues, ...productData });
 				initialData.current = structuredClone(productData);
 
 				setProductImages((current) => ({
@@ -874,8 +893,76 @@ const ProductPage = () => {
 												</Select>
 											</div>
 											<div className='col-span-12 lg:col-span-6'>
+												<Label htmlFor='con_descuento'>
+													¿Con descuento?
+												</Label>
+												<Checkbox
+													id='con_descuento'
+													name='con_descuento'
+													variant='switch'
+													checked={formik.values.con_descuento}
+													onChange={(e) => {
+														formik.setFieldValue('con_descuento', e.target.checked);
+														if (!e.target.checked) {
+															formik.setFieldValue('porcentaje_descuento', 0);
+															formik.setFieldValue('precio_full', undefined);
+														}
+													}}
+													label={formik.values.con_descuento ? 'Sí' : 'No'}
+												/>
+											</div>
+											{formik.values.con_descuento && (
+												<>
+													<div className='col-span-12 lg:col-span-6'>
+														<Label htmlFor='porcentaje_descuento'>
+															Porcentaje de descuento
+															<span className='requiredFieldSymbol'>*</span>
+														</Label>
+														<Select
+															id='porcentaje_descuento'
+															name='porcentaje_descuento'
+															value={formik.values.porcentaje_descuento ? formik.values.porcentaje_descuento.toString() : ''}
+															onChange={(e) => {
+																const porcentaje = Number(e.target.value);
+																formik.setFieldValue('porcentaje_descuento', porcentaje);
+																if (formik.values.precio_full && porcentaje > 0) {
+																	const precioConDescuento = formik.values.precio_full - (formik.values.precio_full * porcentaje / 100);
+																	formik.setFieldValue('precio', Math.round(precioConDescuento * 100) / 100);
+																}
+															}}>
+															{discountPercentageOptions.map((percent) => (
+																<option key={percent} value={percent.toString()}>
+																	{percent}%
+																</option>
+															))}
+														</Select>
+													</div>
+													<div className='col-span-12 lg:col-span-6'>
+														<Label htmlFor='precio_full'>
+															Precio Full
+															<span className='requiredFieldSymbol'>*</span>
+														</Label>
+														<Input
+															type='number'
+															id='precio_full'
+															name='precio_full'
+															value={formik.values.precio_full ?? ''}
+															onChange={(e) => {
+																const { value } = e.target;
+																const precioFull = value === '' ? undefined : Number(value);
+																formik.setFieldValue('precio_full', precioFull);
+																if (formik.values.porcentaje_descuento && precioFull && precioFull > 0) {
+																	const precioConDescuento = precioFull - (precioFull * (formik.values.porcentaje_descuento || 0) / 100);
+																	formik.setFieldValue('precio', Math.round(precioConDescuento * 100) / 100);
+																}
+															}}
+														/>
+													</div>
+												</>
+											)}
+											<div className='col-span-12 lg:col-span-6'>
 												<Label htmlFor='precio'>
-													Precio
+													{formik.values.con_descuento ? 'Precio con Descuento' : 'Precio'}
 													<span className='requiredFieldSymbol'>*</span>
 												</Label>
 												<Input
@@ -884,6 +971,8 @@ const ProductPage = () => {
 													name='precio'
 													onChange={formik.handleChange}
 													value={formik.values.precio}
+													readOnly={formik.values.con_descuento}
+													className={formik.values.con_descuento ? 'bg-zinc-100 dark:bg-zinc-800 cursor-not-allowed' : ''}
 												/>
 											</div>
 										</div>
