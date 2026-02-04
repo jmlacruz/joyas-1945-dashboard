@@ -44,33 +44,35 @@ import Select from '../../../../components/form/Select';
 import { Modal2Context } from '../../../../context/modal2Context';
 import { SpinnerContext } from '../../../../context/spinnerContext';
 import { rubrosList } from '../../../../data';
-import { deleteRowByID, getTable, updateTable } from '../../../../services/database';
+import { deleteRowByID, getTable, getUsersMetrics, updateTable } from '../../../../services/database';
 import { enabledUserNotification } from '../../../../services/mails';
 import { UsersListFilter } from '../../../../types/DASHBOARD';
 import {
 	Usuario,
 	UsuarioListFieldsToTrim,
 	UsuarioParsed,
+	UsuarioParsedWithMetrics,
 	Vendedor,
 } from '../../../../types/DASHBOARD/database';
 import {
 	dateStringToLocaleFormat,
 	getBreakPoint,
+	insertDotsInPrice,
 	isValidJSON,
 	showElement,
 } from '../../../../utils/utils';
 
-const columnHelper = createColumnHelper<UsuarioParsed>();
+const columnHelper = createColumnHelper<UsuarioParsedWithMetrics>();
 const newUserLinkPage = `../${appPages.crmAppPages.subPages.customerPage.subPages.newUserPage.to}`;
 const paginationInitialState: PaginationState = { pageIndex: 0, pageSize: 20 };
 
 const applyFilter = (data: {
 	filter: UsersListFilter;
-	usersInitialData: UsuarioParsed[];
-	setData: React.Dispatch<React.SetStateAction<UsuarioParsed[] | null>>;
+	usersInitialData: UsuarioParsedWithMetrics[];
+	setData: React.Dispatch<React.SetStateAction<UsuarioParsedWithMetrics[] | null>>;
 }) => {
 	const { filter, usersInitialData, setData } = data;
-	let dataFiltered: UsuarioParsed[] = structuredClone(usersInitialData);
+	let dataFiltered: UsuarioParsedWithMetrics[] = structuredClone(usersInitialData);
 
 	if (filter.id) dataFiltered = dataFiltered.filter((user) => user.id === parseInt(filter.id)); //.normalize("NFD").replace(/[\u0300-\u036f]/g, "") saca tildes
 	if (filter.password)
@@ -306,8 +308,8 @@ const CustomerJoyasListPage = () => {
 	const [sorting, setSorting] = useState<SortingState>([{ id: 'id', desc: true }]);
 	const [globalFilter, setGlobalFilter] = useState<string>('');
 
-	const [data, setData] = useState<UsuarioParsed[] | null>(null);
-	const initialData = useRef<UsuarioParsed[] | null>(null);
+	const [data, setData] = useState<UsuarioParsedWithMetrics[] | null>(null);
+	const initialData = useRef<UsuarioParsedWithMetrics[] | null>(null);
 	const { showSpinner } = useContext(SpinnerContext);
 	const { setModal2 } = useContext(Modal2Context);
 	const dispatch = useDispatch();
@@ -482,7 +484,7 @@ const CustomerJoyasListPage = () => {
 			},
 		});
 
-	const columns = useMemo<ColumnDef<UsuarioParsed, any>[]>(
+	const columns = useMemo<ColumnDef<UsuarioParsedWithMetrics, any>[]>(
 		() => [
 			columnHelper.accessor('permisos', {
 				cell: (info) => (
@@ -570,16 +572,34 @@ const CustomerJoyasListPage = () => {
 				footer: 'Ciudad',
 				id: 'ciudad',
 			}),
-			columnHelper.accessor('rubro', {
-				cell: (info) => (
-					<span style={{ textTransform: 'capitalize' }}>{info.getValue()}</span>
-				),
-				header: 'Rubro',
-				footer: 'Rubro',
-				id: 'rubro',
-			}),
+		columnHelper.accessor('rubro', {
+			cell: (info) => (
+				<span style={{ textTransform: 'capitalize' }}>{info.getValue()}</span>
+			),
+			header: 'Rubro',
+			footer: 'Rubro',
+			id: 'rubro',
+		}),
+		columnHelper.accessor('ingresos', {
+			cell: (info) => <span>{info.getValue()}</span>,
+			header: 'Ingresos',
+			footer: 'Ingresos',
+			id: 'ingresos',
+		}),
+		columnHelper.accessor('pedidos', {
+			cell: (info) => <span>{info.getValue()}</span>,
+			header: 'Compras',
+			footer: 'Compras',
+			id: 'pedidos',
+		}),
+		columnHelper.accessor('monto', {
+			cell: (info) => <span>${insertDotsInPrice(info.getValue())}</span>,
+			header: 'Total gastado',
+			footer: 'Total gastado',
+			id: 'monto',
+		}),
 
-			columnHelper.accessor('habilitado', {
+		columnHelper.accessor('habilitado', {
 				cell: (info) => (
 					<Tooltip text={info.getValue() === '1' ? 'Habilitado' : 'Deshabilitado'}>
 						<div className='dflex wh100 justify-start'>
@@ -742,7 +762,27 @@ const CustomerJoyasListPage = () => {
 					});
 				});
 
-				initialData.current = usersDataWithSellerName;
+				// Fetch metrics for all users in a single batch call
+				const userIds = usersDataWithSellerName.map((user) => user.id);
+				const metricsMap = await getUsersMetrics(userIds);
+
+				// Merge metrics into user data, defaulting to 0 if not found
+				const usersDataWithMetrics: UsuarioParsedWithMetrics[] =
+					usersDataWithSellerName.map((user) => {
+						const metrics = metricsMap[user.id] || {
+							ingresos: 0,
+							pedidos: 0,
+							monto: 0,
+						};
+						return {
+							...user,
+							ingresos: metrics.ingresos,
+							pedidos: metrics.pedidos,
+							monto: metrics.monto,
+						};
+					});
+
+				initialData.current = usersDataWithMetrics;
 
 				const usersListShowFiltersJSON = localStorage.getItem('usersListShowFilters');
 				const usersListShowFiltersOBJ =
