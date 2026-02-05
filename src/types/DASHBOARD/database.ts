@@ -144,6 +144,16 @@ export type Usuario = {
 
 export type Vendedor = Usuario;
 
+export type UserMetrics = {
+	ingresos: number;
+	pedidos: number;
+	monto: number;
+};
+
+export type UsuarioWithMetrics = Usuario & UserMetrics;
+
+export type UsuarioParsedWithMetrics = UsuarioParsed & UserMetrics;
+
 export type UsuarioParsed = Omit<Usuario, 'permisos'> & {
 	permisos: 'Administrador' | 'Usuario';
 };

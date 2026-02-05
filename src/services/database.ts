@@ -238,6 +238,85 @@ export const usersLogs = async (data: {
   }
 };
 
+export const getUsersMetrics = async (
+  userIds: number[]
+): Promise<Record<number, { ingresos: number; pedidos: number; monto: number }>> => {
+  // Deduplicate and cap to max 200
+  const uniqueIds = [...new Set(userIds)].slice(0, 200);
+  if (uniqueIds.length === 0) return {};
+
+  const isDev = process.env.NODE_ENV !== "production";
+  const url = `${API_BASE}/db/getUsersMetrics`;
+
+  try {
+    if (isDev) console.log("[getUsersMetrics] POST", url, "userIds count:", uniqueIds.length);
+
+    const responseJSON = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify({ userIds: uniqueIds }),
+      headers: withAuth({ "Content-Type": "application/json" }),
+    });
+
+    if (isDev) console.log("[getUsersMetrics] status:", responseJSON.status);
+
+    if (!responseJSON.ok) {
+      if (isDev) console.warn("[getUsersMetrics] HTTP error:", responseJSON.status, responseJSON.statusText);
+      return {};
+    }
+
+    const responseOBJ = await responseJSON.json();
+
+    // Handle shouldLogout or success === false
+    if (responseOBJ?.shouldLogout === true) {
+      if (isDev) console.warn("[getUsersMetrics] shouldLogout=true, returning empty");
+      return {};
+    }
+    if (responseOBJ?.success === false) {
+      if (isDev) console.warn("[getUsersMetrics] success=false:", responseOBJ.message);
+      return {};
+    }
+
+    // Parse metrics from various possible response shapes:
+    // 1) { success, data: { metrics: {...} } }
+    // 2) { success, data: { [userId]: {...} } } (data IS the metrics object)
+    // 3) { metrics: {...} }
+    // 4) { [userId]: {...} } (direct metrics object)
+    let metrics: Record<string | number, { ingresos: number; pedidos: number; monto: number }> = {};
+
+    if (responseOBJ?.data?.metrics && typeof responseOBJ.data.metrics === "object") {
+      metrics = responseOBJ.data.metrics;
+    } else if (responseOBJ?.data && typeof responseOBJ.data === "object" && !Array.isArray(responseOBJ.data)) {
+      // Check if data looks like a metrics object (has numeric keys or user IDs)
+      const dataKeys = Object.keys(responseOBJ.data);
+      if (dataKeys.length > 0 && dataKeys.every(k => !isNaN(Number(k)) || responseOBJ.data[k]?.ingresos !== undefined)) {
+        metrics = responseOBJ.data;
+      }
+    } else if (responseOBJ?.metrics && typeof responseOBJ.metrics === "object") {
+      metrics = responseOBJ.metrics;
+    }
+
+    // Normalize keys to numbers (JSON keys are always strings)
+    const result: Record<number, { ingresos: number; pedidos: number; monto: number }> = {};
+    for (const [key, value] of Object.entries(metrics)) {
+      const numKey = Number(key);
+      if (!isNaN(numKey) && value && typeof value === "object") {
+        result[numKey] = {
+          ingresos: typeof value.ingresos === "number" ? value.ingresos : 0,
+          pedidos: typeof value.pedidos === "number" ? value.pedidos : 0,
+          monto: typeof value.monto === "number" ? value.monto : 0,
+        };
+      }
+    }
+
+    if (isDev) console.log("[getUsersMetrics] parsed metrics count:", Object.keys(result).length);
+
+    return result;
+  } catch (err) {
+    if (isDev) console.error("[getUsersMetrics] error:", err);
+    return {};
+  }
+};
+
 export const updateGoogleReviews = async (): Promise<Database_CustomResponse> => {
   try {
     const responseJSON = await fetch(
