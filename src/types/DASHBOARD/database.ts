@@ -509,7 +509,7 @@ export type CartItem = {
 export type Cart = {
 	id: number;
 	userEmail: string;
-	cart: string;
+	cart: CartItem[] | string | null;
 	generalObservation: string;
 	lastDate: number;
 	cronJobId: number;

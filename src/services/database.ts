@@ -184,12 +184,26 @@ export const deleteRowByID = async (options: { tableName: string, rowID: number 
   if (!options.tableName || typeof options.tableName !== "string") options.tableName = "";
   if (!options.rowID || typeof options.rowID !== "number") options.rowID = -1;
 
+  const url = `${API_BASE}/db/deleteRowByID?tableName=${options.tableName}&rowID=${options.rowID}`;
+  const token = localStorage.getItem("dashtoken");
+
+  // Debug logging (no secrets)
+  if (process.env.NODE_ENV !== "production") {
+    console.debug("deleteRowByID url", url);
+    console.debug("hasToken", Boolean(token));
+  }
+
   try {
-    const responseJSON = await fetch(
-      `${API_BASE}/db/deleteRowByID?tableName=${options.tableName}&rowID=${options.rowID}`,
-      { method: "DELETE", headers: withAuth() }
-    );
+    const responseJSON = await fetch(url, { method: "DELETE", headers: withAuth() });
     const responseOBJ = await responseJSON.json();
+
+    // Handle shouldLogout
+    if (responseOBJ.shouldLogout === true) {
+      localStorage.removeItem("dashtoken");
+      window.location.href = "/login";
+      return { success: false, message: "Sesión expirada. Redirigiendo al login...", data: null };
+    }
+
     return responseOBJ;
   } catch (err) {
     const message = err instanceof Error ? "ERROR: " + err.message : "ERROR: " + err;
